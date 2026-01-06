@@ -11,9 +11,9 @@ const NavItems = ({data, isExpand}) => {
     const activeBgColor = useColorModeValue('gray.100', 'gray.900')
 
   return (
-    <ChakraLink _hover={{bgColor: activeBgColor, color: useColorModeValue( 'gray.900','white') }} color={useColorModeValue( 'gray.600','gray.300')} animation={`${!isExpand ? 'fadeInLeft' : 'fadeInRight' } 0.5s` } py={1} px={4} rounded={'20px'} w={'full'} _currentPage={{  color: useColorModeValue('white', 'gray.900'), bgColor: useColorModeValue('gray.800', 'white'), py: 2, px :4, mb: 1, boxShadow : '0px 0px 11px -2px rgba(124, 121, 121, 0.2)' }}  asChild>
+    <ChakraLink justifyContent={isExpand ? 'center': 'left'} _hover={{bgColor: activeBgColor, color: useColorModeValue( 'gray.900','white') }} color={useColorModeValue( 'gray.600','gray.300')} animation={`${!isExpand ? 'fadeInLeft' : 'fadeInRight' } 0.5s` } py={1} px={4} rounded={'full'} w={!isExpand ? 'full': 10} h={!isExpand ? 'unset' : 10} _currentPage={{  bgColor: useColorModeValue('gray.300', 'white'), py: 2, px :4, mb: 1, boxShadow : '0px 0px 11px -2px rgba(124, 121, 121, 0.2)' }}  asChild>
       <RouterNavLink to={data.href}>
-            <HStack fontFamily={'Onest'} fontWeight={500} >
+            <HStack fontFamily={'Onest'}  letterSpacing={-0.5}>
                 <Icon boxSize={5}>
                    {data.icon}
                 </Icon> 

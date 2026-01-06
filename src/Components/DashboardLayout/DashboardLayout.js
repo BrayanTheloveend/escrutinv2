@@ -15,7 +15,7 @@ const DashboardLayout = ({component}) => {
     const { colorMode, toggleColorMode } = useColorMode()
     const [isExpand, setIsExpand] = useState(false);
 
-        //NAVITEMS-------------
+    //NAVITEMS-------------
     const navItems = [
         { label: 'Tableau de Bord', href: '/dashboard', icon:  <HiOutlineHome/>, iconSolid: <HiHome/> },
         { label: 'Concours', href: '/notificationsRequest', icon: <HiOutlineInbox/>, iconSolid: <HiAnnotation/> },
@@ -42,13 +42,13 @@ const DashboardLayout = ({component}) => {
         <Grid bg={dashboardBg} px={isExpand ?  4 : 'unset'} position={'relative'} w='100%'  gap={0}  gridTemplateColumns={{md: `${!isExpand ? '210px' :  '50px' }  1fr`, base: '1fr'}}>
             {/* Sidebars */}
 
-             <GridItem px={!isExpand ? 3 : 'unset'} borderRight={"1px solid"} borderRightColor={'gray.200'} position={'sticky'} w={'full'} h={'100vh'} display={{md: 'block', base: 'none'}}>
+             <GridItem px={!isExpand ? 3 : 'unset'} borderRight={!isExpand ? "1px solid" : "unset"} borderRightColor={'gray.200'} position={'sticky'} w={'full'} h={'100vh'} justifyContent={'center'} display={{md: 'block', base: 'none'}}>
                 {/* <Text textTransform={'uppercase'} ml={2} mb={4} fontSize={'xs'} fontWeight={600} fontFamily={'Onest'} color={textGhost}>
                     { !isExpand ? 'Navigation' : ' '}
                 </Text> */}
 
                 <HStack py={3} pb={6} pl={4} justify={'space-between'} w={'full'}>
-                    <Heading fontFamily={'Poppins'} letterSpacing={-0.9}>
+                    <Heading fontFamily={'Poppins'} fontSize={'2xl'} letterSpacing={-0.9}>
                         Chalenge
                     </Heading>
 
@@ -66,15 +66,17 @@ const DashboardLayout = ({component}) => {
             </GridItem>
 
             <GridItem w={'full'} h={'full'}>
-                <Flex bgColor={'#efefef'} py={2} px={4} justify={'space-between'} align={'center'}>
+                <Flex bgColor={ !isExpand ? '#efefef' : 'transparent'} py={2} px={4} justify={'space-between'} align={'center'}>
                     <HStack spacing={3} position={'relative'}>
                         <Input
+                        visibility={!isExpand ? 'visible' : 'hidden'}
                         bg={cardColor}
+                        minW={isExpand ? '40px' : '300px'}
+                        fontFamily={'Onest'}
                             focusBorderColor={'blue.400'}
-                            borderColor={useColorModeValue('gray.300', 'gray.700')}
-                            rounded={'full'} 
+                            rounded={'0px'} 
                             type="text" 
-                            placeholder="Rechercher..." 
+                            placeholder="Rechercher ou saisir quelque chose..." 
                         />
                         <Icon boxSize={4} position='absolute' right={4} color={textGhost}>
                             <HiSearch/>
