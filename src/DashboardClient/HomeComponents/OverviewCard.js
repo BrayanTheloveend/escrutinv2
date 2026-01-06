@@ -6,8 +6,8 @@ const OverviewCard = ({ title, subtitles, value, icon , gradient}) => {
     <Box
         p="4" // Padding intérieur
         borderRadius="xl" // Coins arrondis (xl est une valeur prédéfinie)
-        width="200px"
-        height="220px"
+        width={{ base: "160px", md: "180px", lg: "240px" }}
+        height={{ base: "280px", md: "200px", lg: "260px" }}
         // Utilisation de bgGradient pour le dégradé de fond
         
       bgGradient="to-br"
