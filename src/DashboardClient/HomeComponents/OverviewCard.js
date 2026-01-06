@@ -45,7 +45,7 @@ const OverviewCard = ({ title, subtitles, value, icon , gradient}) => {
 
         {/* Pied de page */}
         <Box>
-          <Text fontSize="5xl" fontWeight="bold" fontFamily={'Outfit'} mt={2}>{value}</Text>
+          <Text fontSize={{ base: "2", md: "3xl", '2xl': "5xl" }} fontWeight="bold" fontFamily={'Outfit'} mt={2}>{value}</Text>
           <Text fontSize="xs" fontWeight="medium" opacity={0.7}>Avg. Completed</Text>
         </Box>
       </Flex>
