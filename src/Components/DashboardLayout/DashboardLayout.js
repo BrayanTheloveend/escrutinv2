@@ -14,6 +14,7 @@ const DashboardLayout = ({component}) => {
     const textGhost = useColorModeValue('gray.600', 'gray.500')
     const { colorMode, toggleColorMode } = useColorMode()
     const [isExpand, setIsExpand] = useState(false);
+    const borderColor = useColorModeValue('gray.100', 'gray.700')
 
     //NAVITEMS-------------
     const navItems = [
@@ -42,17 +43,17 @@ const DashboardLayout = ({component}) => {
         <Grid bg={dashboardBg} px={isExpand ?  4 : 'unset'} position={'relative'} w='100%'  gap={0}  gridTemplateColumns={{md: `${!isExpand ? '210px' :  '50px' }  1fr`, base: '1fr'}}>
             {/* Sidebars */}
 
-             <GridItem px={!isExpand ? 3 : 'unset'} borderRight={!isExpand ? "1px solid" : "unset"} borderRightColor={'gray.100'} position={'sticky'} w={'full'} h={'100vh'} justifyContent={'center'} display={{md: 'block', base: 'none'}}>
+             <GridItem px={!isExpand ? 3 : 'unset'} borderRight={!isExpand ? "1px solid" : "unset"} borderColor={borderColor} position={'sticky'} w={'full'} h={'100vh'} justifyContent={'center'} display={{md: 'block', base: 'none'}}>
                 {/* <Text textTransform={'uppercase'} ml={2} mb={4} fontSize={'xs'} fontWeight={600} fontFamily={'Onest'} color={textGhost}>
                     { !isExpand ? 'Navigation' : ' '}
                 </Text> */}
 
-                <HStack py={3} pb={6} pl={4} justify={'space-between'} w={'full'}>
+                <HStack mt={6} pb={6} pl={4} justify={'space-between'} w={'full'}>
                     <Heading fontFamily={'Poppins'} fontSize={'2xl'} letterSpacing={-0.9}>
                         Chalenge
                     </Heading>
 
-                    <IconButton bgColor={'white'} size={'sm'} position={'absolute'} right={-5} top={9} onClick={()=>setIsExpand(!isExpand)} variant={"outline"} rounded={'full'}>
+                    <IconButton bgColor={useColorModeValue('white', 'gray.800')} size={'sm'} position={'absolute'} right={-5} top={9} onClick={()=>setIsExpand(!isExpand)} variant={"outline"} rounded={'full'}>
                         <Icon transform={`rotate(${isExpand ? 0 : 180}deg)`} animation={'0.2s ease-in-out'} boxSize={4}>
                             <LuChevronLeft/>
                         </Icon>
@@ -66,19 +67,19 @@ const DashboardLayout = ({component}) => {
                 </Box>
                 
 
-                <Box py={4} w={'full'} borderTop={'1px solid'} borderColor={'gray.100'} position={'absolute'} bottom={10} >
+                <Box py={4} w={'full'} borderTop={'1px solid'} borderColor={borderColor} position={'absolute'} bottom={10} >
                     <HStack>
                         <Icon boxSize={5} color={'red.500'}>
                             <HiOutlineLogout/>
                         </Icon>
-                        <Text fontSize={'sm'} display={!isExpand ? 'block' : 'none'}>Deconnexion</Text>
+                        <Text fontFamily={'Onest'} fontSize={'sm'} display={!isExpand ? 'block' : 'none'}>Deconnexion</Text>
                     </HStack>
                 </Box>
                 
             </GridItem>
 
             <GridItem w={'full'} h={'full'}>
-                <Flex px={10}  borderBottom={'1px solid'} borderColor={'gray.100'} py={2} justify={'space-between'} align={'center'}>
+                <Flex px={10}  borderBottom={'1px solid'} borderColor={borderColor} py={2} justify={'space-between'} align={'center'}>
                     <HStack  spacing={3} position={'relative'}>
                         <Input
                         visibility={!isExpand ? 'visible' : 'hidden'}
