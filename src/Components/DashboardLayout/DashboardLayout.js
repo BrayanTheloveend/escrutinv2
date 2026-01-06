@@ -43,18 +43,18 @@ const DashboardLayout = ({component}) => {
         <Grid bg={dashboardBg} px={isExpand ?  4 : 'unset'} position={'relative'} w='100%'  gap={0}  gridTemplateColumns={{md: `${!isExpand ? '210px' :  '50px' }  1fr`, base: '1fr'}}>
             {/* Sidebars */}
 
-             <GridItem px={!isExpand ? 3 : 'unset'} borderRight={!isExpand ? "1px solid" : "unset"} borderColor={borderColor} position={'sticky'} w={'full'} h={'100vh'} justifyContent={'center'} display={{md: 'block', base: 'none'}}>
+             <GridItem px={!isExpand ? 3 : 'unset'} borderRight={!isExpand ? "1px solid" : "unset"} borderColor={borderColor} position={'sticky'} w={!isExpand ? '210px' :  '50px'}  left={!isExpand ? 0 :  2} h={'100vh'} top={0} justifyContent={'center'} display={{md: 'block', base: 'none'}}>
                 {/* <Text textTransform={'uppercase'} ml={2} mb={4} fontSize={'xs'} fontWeight={600} fontFamily={'Onest'} color={textGhost}>
                     { !isExpand ? 'Navigation' : ' '}
                 </Text> */}
 
-                <HStack mt={6} pb={6} pl={4} justify={'space-between'} w={'full'}>
+                <HStack mt={6} zIndex={100} position={'relative'} pb={6} pl={4} justify={'space-between'} w={'full'}>
                     <Heading fontFamily={'Poppins'} fontSize={'2xl'} letterSpacing={-0.9}>
                         Chalenge
                     </Heading>
 
-                    <IconButton bgColor={useColorModeValue('white', 'gray.800')} size={'sm'} position={'absolute'} right={-5} top={9} onClick={()=>setIsExpand(!isExpand)} variant={"outline"} rounded={'full'}>
-                        <Icon transform={`rotate(${isExpand ? 0 : 180}deg)`} animation={'0.2s ease-in-out'} boxSize={4}>
+                    <IconButton bgColor={useColorModeValue('white', 'gray.800')} size={'sm'} position={'absolute'} style={{ zIndex: 100 }} right={-8} top={5} onClick={()=>setIsExpand(!isExpand)} variant={"outline"} rounded={'full'}>
+                        <Icon zIndex={100} transform={`rotate(${isExpand ? 0 : 180}deg)`} animation={'0.2s ease-in-out'} boxSize={4}>
                             <LuChevronLeft/>
                         </Icon>
                     </IconButton>
@@ -78,19 +78,19 @@ const DashboardLayout = ({component}) => {
                 
             </GridItem>
 
-            <GridItem w={'full'} h={'full'}>
-                <Flex px={10}  borderBottom={'1px solid'} borderColor={borderColor} py={2} justify={'space-between'} align={'center'}>
-                    <HStack  spacing={3} position={'relative'}>
+            <GridItem w={'full'} h={'full'} position={'relative'}>
+                <Flex px={10} position={'fixed'} top={0} left={!isExpand ? '210px' :  '50px'} right={0} zIndex={1} flex={1} borderBottom={'1px solid'} borderColor={borderColor} py={2} justify={'space-between'} align={'center'}>
+                    <HStack display={{md: 'flex', base: 'none'}} spacing={3} position={'relative'}>
                         <Input
                         visibility={!isExpand ? 'visible' : 'hidden'}
                         bgColor={ !isExpand ? '#efefef' : 'transparent'}
                         bg={cardColor}
                         minW={isExpand ? '40px' : '300px'}
                         fontFamily={'Onest'}
-                            focusBorderColor={'blue.400'}
-                            rounded={'0px'} 
-                            type="text" 
-                            placeholder="Rechercher ou saisir quelque chose..." 
+                        focusBorderColor={'blue.400'}
+                        rounded={'0px'} 
+                        type="text" 
+                        placeholder="Rechercher ou saisir quelque chose..." 
                         />
                         <Icon boxSize={4} position='absolute' right={4} color={textGhost}>
                             <HiSearch/>
@@ -111,7 +111,13 @@ const DashboardLayout = ({component}) => {
                         </Avatar.Root>
                     </HStack>
                 </Flex>
-                {component}
+
+                <Box pt={20} px={10} pb={10}>
+                    {component}
+                </Box>
+
+                
+
             </GridItem>
 
             
