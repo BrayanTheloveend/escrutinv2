@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { useColorMode, useColorModeValue } from '../ui/color-mode'
-import { Avatar, Flex, Grid, GridItem, Heading, HStack, Icon, IconButton, Input, Text } from '@chakra-ui/react'
-import { HiAnnotation, HiHome, HiOutlineAdjustments, HiOutlineAnnotation, HiOutlineArchive, HiOutlineHome, HiOutlineInbox, HiOutlineUserCircle, HiSearch, HiUserCircle } from 'react-icons/hi'
+import { Avatar, Box, Flex, Grid, GridItem, Heading, HStack, Icon, IconButton, Input, Text } from '@chakra-ui/react'
+import { HiAnnotation, HiHome, HiOutlineBell, HiOutlineHome, HiOutlineInbox, HiOutlineLogout, HiOutlineUserCircle, HiSearch, HiUserCircle } from 'react-icons/hi'
 import NavItems from './NavItems'
 import './dashboard.css'
-import { LuExpand, LuMoon, LuSun } from 'react-icons/lu'
+import { LuBell, LuChevronLeft,  LuMoon, LuSun } from 'react-icons/lu'
 
 const DashboardLayout = ({component}) => {
 
@@ -42,7 +42,7 @@ const DashboardLayout = ({component}) => {
         <Grid bg={dashboardBg} px={isExpand ?  4 : 'unset'} position={'relative'} w='100%'  gap={0}  gridTemplateColumns={{md: `${!isExpand ? '210px' :  '50px' }  1fr`, base: '1fr'}}>
             {/* Sidebars */}
 
-             <GridItem px={!isExpand ? 3 : 'unset'} borderRight={!isExpand ? "1px solid" : "unset"} borderRightColor={'gray.200'} position={'sticky'} w={'full'} h={'100vh'} justifyContent={'center'} display={{md: 'block', base: 'none'}}>
+             <GridItem px={!isExpand ? 3 : 'unset'} borderRight={!isExpand ? "1px solid" : "unset"} borderRightColor={'gray.100'} position={'sticky'} w={'full'} h={'100vh'} justifyContent={'center'} display={{md: 'block', base: 'none'}}>
                 {/* <Text textTransform={'uppercase'} ml={2} mb={4} fontSize={'xs'} fontWeight={600} fontFamily={'Onest'} color={textGhost}>
                     { !isExpand ? 'Navigation' : ' '}
                 </Text> */}
@@ -52,24 +52,37 @@ const DashboardLayout = ({component}) => {
                         Chalenge
                     </Heading>
 
-                    <IconButton onClick={()=>setIsExpand(!isExpand)} variant={"outline"} size={'sm'} rounded={'full'}>
-                        <Icon boxSize={4}>
-                            <LuExpand/>
+                    <IconButton bgColor={'white'} size={'sm'} position={'absolute'} right={-5} top={9} onClick={()=>setIsExpand(!isExpand)} variant={"outline"} rounded={'full'}>
+                        <Icon transform={`rotate(${isExpand ? 0 : 180}deg)`} animation={'0.2s ease-in-out'} boxSize={4}>
+                            <LuChevronLeft/>
                         </Icon>
                     </IconButton>
                 </HStack>
 
-                {navItems.map((elt, index)=>
+                <Box mt={4}>
+                    {navItems.map((elt, index)=>
                     <NavItems isExpand={isExpand} data={elt} key={index}/>
-                )}
+                    )}
+                </Box>
+                
+
+                <Box py={4} w={'full'} borderTop={'1px solid'} borderColor={'gray.100'} position={'absolute'} bottom={10} >
+                    <HStack>
+                        <Icon boxSize={5} color={'red.500'}>
+                            <HiOutlineLogout/>
+                        </Icon>
+                        <Text fontSize={'sm'} display={!isExpand ? 'block' : 'none'}>Deconnexion</Text>
+                    </HStack>
+                </Box>
                 
             </GridItem>
 
             <GridItem w={'full'} h={'full'}>
-                <Flex bgColor={ !isExpand ? '#efefef' : 'transparent'} py={2} px={4} justify={'space-between'} align={'center'}>
-                    <HStack spacing={3} position={'relative'}>
+                <Flex px={10}  borderBottom={'1px solid'} borderColor={'gray.100'} py={2} justify={'space-between'} align={'center'}>
+                    <HStack  spacing={3} position={'relative'}>
                         <Input
                         visibility={!isExpand ? 'visible' : 'hidden'}
+                        bgColor={ !isExpand ? '#efefef' : 'transparent'}
                         bg={cardColor}
                         minW={isExpand ? '40px' : '300px'}
                         fontFamily={'Onest'}
@@ -83,12 +96,15 @@ const DashboardLayout = ({component}) => {
                         </Icon>
                     </HStack>
 
-                    <HStack spacing={4} direction={'row'} align={'center'}>
+                    <HStack spacing={4} direction={'row'} justify={'space-between'} align={'center'}>
                         <IconButton onClick={toggleColorMode} variant={'ghost'} rounded={'full'}>
                             <Icon boxSize={4}>
                                 {colorMode === 'light' ? <LuMoon/> : <LuSun/>}
                             </Icon>
                         </IconButton>
+                        <Icon boxSize={4}>
+                            <LuBell/> 
+                        </Icon>
                         <Avatar.Root size={'sm'}>
                             <Avatar.Image src="https://i.pravatar.cc/100"/>
                         </Avatar.Root>
