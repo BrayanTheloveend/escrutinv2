@@ -2,6 +2,9 @@ import { Box, Flex, Icon, SimpleGrid, Text, VStack } from '@chakra-ui/react'
 import React from 'react'
 import { LuCalendarSearch, LuTimer } from 'react-icons/lu'
 import OverviewCard from './HomeComponents/OverviewCard'
+import FinancialStatCard from './HomeComponents/FinancialStatCard'
+import GrowthRateWidget from './HomeComponents/Meter'
+import DashboardLineChart from './HomeComponents/Charts/DashboardLineChart'
 
 const Home = () => {
 
@@ -38,7 +41,12 @@ const Home = () => {
             gradient={data.gradient}
           />
         ))}
+
+        <VStack>
+          <GrowthRateWidget value={36} />
+        </VStack>
       </Flex>
+      
     </Box>
   )
 }

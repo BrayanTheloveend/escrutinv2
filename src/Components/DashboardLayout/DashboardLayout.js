@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useColorMode, useColorModeValue } from '../ui/color-mode'
-import { Avatar, Box, Flex, Grid, GridItem, Heading, HStack, Icon, IconButton, Input, Text } from '@chakra-ui/react'
+import { Avatar, Box, Button, Flex, Grid, GridItem, Heading, HStack, Icon, IconButton, Input, Text } from '@chakra-ui/react'
 import { HiAnnotation, HiHome, HiOutlineBell, HiOutlineHome, HiOutlineInbox, HiOutlineLogout, HiOutlineUserCircle, HiSearch, HiUserCircle } from 'react-icons/hi'
 import NavItems from './NavItems'
 import './dashboard.css'
@@ -10,11 +10,11 @@ const DashboardLayout = ({component}) => {
 
     //VARIABLE--------------
     const cardColor = useColorModeValue('white', 'gray.900')
-    const dashboardBg= useColorModeValue('#ffffffff', 'blackAplha')
+    const dashboardBg= useColorModeValue('#ffffffff', 'gray.950')
     const textGhost = useColorModeValue('gray.600', 'gray.500')
+    const borderColor = useColorModeValue('gray.100', 'gray.700')
     const { colorMode, toggleColorMode } = useColorMode()
     const [isExpand, setIsExpand] = useState(false);
-    const borderColor = useColorModeValue('gray.100', 'gray.700')
 
     //NAVITEMS-------------
     const navItems = [
@@ -43,21 +43,17 @@ const DashboardLayout = ({component}) => {
         <Grid bg={dashboardBg} px={isExpand ?  4 : 'unset'} position={'relative'} w='100%'  gap={0}  gridTemplateColumns={{md: `${!isExpand ? '210px' :  '50px' }  1fr`, base: '1fr'}}>
             {/* Sidebars */}
 
-             <GridItem px={!isExpand ? 3 : 'unset'} borderRight={!isExpand ? "1px solid" : "unset"} borderColor={borderColor} position={'sticky'} w={!isExpand ? '210px' :  '50px'}  left={!isExpand ? 0 :  2} h={'100vh'} top={0} justifyContent={'center'} display={{md: 'block', base: 'none'}}>
+            <GridItem px={!isExpand ? 3 : 'unset'} borderRight={!isExpand ? "1px solid" : "unset"} borderColor={borderColor} position={'sticky'} w={!isExpand ? '210px' :  '50px'} zIndex={isExpand ? 20 : 10} bgColor={dashboardBg}  left={!isExpand ? 0 :  2} h={'100vh'} top={0} justifyContent={'center'} display={{md: 'block', base: 'none'}}>
                 {/* <Text textTransform={'uppercase'} ml={2} mb={4} fontSize={'xs'} fontWeight={600} fontFamily={'Onest'} color={textGhost}>
                     { !isExpand ? 'Navigation' : ' '}
                 </Text> */}
 
-                <HStack mt={6} zIndex={100} position={'relative'} pb={6} pl={4} justify={'space-between'} w={'full'}>
-                    <Heading fontFamily={'Poppins'} fontSize={'2xl'} letterSpacing={-0.9}>
+                <HStack mt={6} position={'relative'} pb={6} pl={4} justify={'space-between'} w={'full'}>
+                    { !isExpand && <Heading fontFamily={'Poppins'} fontSize={'2xl'} letterSpacing={-0.9}>
                         Chalenge
-                    </Heading>
+                    </Heading>}
 
-                    <IconButton bgColor={useColorModeValue('white', 'gray.800')} size={'sm'} position={'absolute'} style={{ zIndex: 100 }} right={-8} top={5} onClick={()=>setIsExpand(!isExpand)} variant={"outline"} rounded={'full'}>
-                        <Icon zIndex={100} transform={`rotate(${isExpand ? 0 : 180}deg)`} animation={'0.2s ease-in-out'} boxSize={4}>
-                            <LuChevronLeft/>
-                        </Icon>
-                    </IconButton>
+                    
                 </HStack>
 
                 <Box mt={4}>
@@ -79,7 +75,14 @@ const DashboardLayout = ({component}) => {
             </GridItem>
 
             <GridItem w={'full'} h={'full'} position={'relative'}>
-                <Flex px={10} position={'fixed'} top={0} left={!isExpand ? '210px' :  '50px'} right={0} zIndex={1} flex={1} borderBottom={'1px solid'} borderColor={borderColor} py={2} justify={'space-between'} align={'center'}>
+                <Flex bgColor={dashboardBg} zIndex={10} px={10} position={'fixed'} top={0} left={!isExpand ? '210px' :  '50px'} right={0} flex={1} borderBottom={'1px solid'} borderColor={borderColor} py={2} justify={'space-between'} align={'center'}>
+
+                    <IconButton bgColor={useColorModeValue('white', 'gray.800')} size={'sm'} position={'absolute'} style={{ zIndex: 10 }} left={ !isExpand ? -5 : 4} bottom={ !isExpand ? -5 : -4} onClick={()=>setIsExpand(!isExpand)} variant={"outline"} rounded={'full'}>
+                        <Icon transform={`rotate(${!isExpand ? 0 : 180}deg)`} animation={'0.2s ease-in-out'} boxSize={4}>
+                            <LuChevronLeft/>
+                        </Icon>
+                    </IconButton>
+
                     <HStack display={{md: 'flex', base: 'none'}} spacing={3} position={'relative'}>
                         <Input
                         visibility={!isExpand ? 'visible' : 'hidden'}
@@ -112,11 +115,21 @@ const DashboardLayout = ({component}) => {
                     </HStack>
                 </Flex>
 
-                <Box pt={20} px={10} pb={10}>
-                    {component}
-                </Box>
+                <Grid gridTemplateColumns={'3fr 1fr'} w={'full'} h={'full'} position={'relative'}>
 
-                
+                    <GridItem pt={20} px={10} pb={10} maxW={'full'} maxH={'full'} overscrollY={'scroll'}>
+                        <Box>
+                            {component}
+                        </Box>
+                    </GridItem>
+
+                    <GridItem borderLeft={'1px solid'} borderColor={borderColor} pt={20} px={6} pb={10} display={{'2xl': 'block', base: 'none'}}>
+                        <Box w={'full'} position={'sticky'} top={20}>
+                            <Heading fontSize={'sm'} fontWeight={500} fontFamily={'Onest'} color={textGhost}>Statistiques rapides</Heading>
+                        </Box>
+                        
+                    </GridItem>
+                </Grid>
 
             </GridItem>
 
