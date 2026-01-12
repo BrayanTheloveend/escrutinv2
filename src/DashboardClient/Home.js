@@ -5,6 +5,7 @@ import OverviewCard from './HomeComponents/OverviewCard'
 import GrowthRateWidget from './HomeComponents/Meter'
 import { useColorModeValue } from '../Components/ui/color-mode'
 import DashboardLineChart from './HomeComponents/Charts/DashboardLineChart'
+import DashboardBarChart from './HomeComponents/Charts/DashboardBarChart'
 
 
 const Home = () => {
@@ -197,7 +198,7 @@ const Home = () => {
 
             <HStack align={{md: 'end', '2xl': 'center'}} flexDir={{md: 'column', '2xl': 'row'}} justify={'center'} gap={2}>
               <Text fontSize={{ base: "xl", md: "md", '2xl': "4xl" }} fontWeight="500" fontFamily={'Outfit'} mt={2}>150 000$</Text>
-              <Tag.Root size={'sm'} fontSize={'xs'} rounded={'full'} fontFamily={'Stack Sans Text'} colorPalette={"red"}>
+              <Tag.Root size={'sm'} fontSize={'xs'} rounded={'full'} fontFamily={'Stack Sans Text'} colorPalette={"green"}>
                 <Tag.Label>+5%</Tag.Label>
               </Tag.Root>
             </HStack>    
@@ -208,18 +209,19 @@ const Home = () => {
         <Box p={4} bgColor={cardColor} color={useColorModeValue('gray.950', 'white')} fontSize={"xs"} rounded={20} boxShadow={'sm'} overflow={'hidden'}>
           <Flex justifyContent={'space-between'} alignItems={'center'}>
             <Box px={4}>
-              <Text fontSize="md" fontWeight="medium" lineHeight="short" fontFamily={'Onest'}>Activitées des transactions</Text>
+              <Text fontSize="md" fontWeight="medium" lineHeight="short" fontFamily={'Onest'}>Total des depenses</Text>
               <Text fontSize={'xs'} lineClamp={2} fontFamily={'Inter'} color={'gray.500'}>Ce mois</Text>
             </Box>    
 
             <HStack align={{md: 'end', '2xl': 'center'}} flexDir={{md: 'column', '2xl': 'row'}} gap={2}>
               <Text fontSize={{ base: "xl", md: "md", '2xl': "4xl" }} fontWeight="500" fontFamily={'Outfit'} mt={2}>150 000$</Text>
               <Tag.Root size={'sm'} fontSize={'xs'} rounded={'full'} fontFamily={'Stack Sans Text'} colorPalette={"red"}>
-                <Tag.Label>+5%</Tag.Label>
+                <Tag.Label>-0.15%</Tag.Label>
               </Tag.Root>
             </HStack>    
           </Flex>
-          <DashboardLineChart data={chartSeries[0].data} data2={chartSeries[1].data}/>
+
+          <DashboardBarChart data={chartSeries[0].data} colors={'#c22c2cff'}/>
         </Box>  
       </SimpleGrid>
 

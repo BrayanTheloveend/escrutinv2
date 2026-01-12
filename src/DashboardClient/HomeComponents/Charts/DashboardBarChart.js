@@ -3,24 +3,29 @@ import ReactApexChart from 'react-apexcharts';
 import { useColorModeValue } from '../../../Components/ui/color-mode';
 
 
-const DashboardLineChart = ({ data = [], data2 = [], colors, colors2, height = 250 }) => {
+const DashboardBarChart = ({ data = [], colors, height = 250 }) => {
   const textColor = useColorModeValue('gray.600', 'white');
   const gridColor = useColorModeValue('gray.200', '#1a1a1a');
 
   const options = {
     chart: {
-      type: 'line',
+      type: 'bar',
+      stacked: data[0]?.value2 ? true : false,
       toolbar: {
         show: false,
       },
-      zoom: {
-        enabled: false,
-      },
     },
-    colors: [colors || '#3B82F6', colors2 || '#f7762cff'],
-    stroke: {
-      curve: 'smooth',
-      width: 2,
+    colors: [ colors || '#3B82F6', '#6366F1'],
+    plotOptions: {
+      bar: {
+        horizontal: false,
+        borderRadius: 10,
+        borderRadiusApplication: 'end',
+        columnWidth: '30px',
+        style: {
+          fontFamily: 'Outfit'
+        }
+      },
     },
     grid: {
       borderColor: gridColor,
@@ -41,7 +46,7 @@ const DashboardLineChart = ({ data = [], data2 = [], colors, colors2, height = 2
         style: {
           colors: textColor,
           fontFamily: 'Outfit',
-          fontSize: '8px',
+          fontSize: '12px',
         },
         formatter: (value) => {
           return value.toLocaleString('fr-FR');
@@ -59,18 +64,18 @@ const DashboardLineChart = ({ data = [], data2 = [], colors, colors2, height = 2
     },
   };
 
-  const series = data2 && data2.length > 0 ? [
+  const series = data[0]?.value2 ? [
     {
       name: 'Série 1',
       data: data.map(item => item.value),
     },
     {
       name: 'Série 2',
-      data: data2.map(item => item.value),
+      data: data.map(item => item.value2 || 0),
     },
   ] : [
     {
-      name: 'Revenus',
+      name: 'Valeur',
       data: data.map(item => item.value),
     },
   ];
@@ -79,13 +84,13 @@ const DashboardLineChart = ({ data = [], data2 = [], colors, colors2, height = 2
     <ReactApexChart
       options={options}
       series={series}
-      type="line"
+      type="bar"
       height={height}
     />
   );
 };
 
-export default DashboardLineChart;
+export default DashboardBarChart;
 
 
 
