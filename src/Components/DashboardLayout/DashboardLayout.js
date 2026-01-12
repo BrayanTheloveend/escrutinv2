@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useColorMode, useColorModeValue } from '../ui/color-mode'
-import { Avatar, Box, Button, Flex, Grid, GridItem, Heading, HStack, Icon, IconButton, Input, Text } from '@chakra-ui/react'
-import { HiAnnotation, HiHome, HiOutlineBell, HiOutlineHome, HiOutlineInbox, HiOutlineLogout, HiOutlineUserCircle, HiSearch, HiUserCircle } from 'react-icons/hi'
+import { Avatar, Box, Flex, Grid, GridItem, Heading, HStack, Icon, IconButton, Input, Text } from '@chakra-ui/react'
+import { HiAnnotation, HiHome, HiOutlineHome, HiOutlineInbox, HiOutlineLogout, HiOutlineUserCircle, HiUserCircle } from 'react-icons/hi'
 import NavItems from './NavItems'
 import './dashboard.css'
-import { LuBell, LuChevronLeft,  LuMoon, LuSun } from 'react-icons/lu'
+import { LuBell, LuChevronLeft,  LuMoon, LuSearch, LuSun } from 'react-icons/lu'
 
-const DashboardLayout = ({component}) => {
+const DashboardLayout = ({component, componentRightSide}) => {
 
     //VARIABLE--------------
     const cardColor = useColorModeValue('white', 'gray.900')
@@ -19,7 +19,7 @@ const DashboardLayout = ({component}) => {
     //NAVITEMS-------------
     const navItems = [
         { label: 'Tableau de Bord', href: '/dashboard', icon:  <HiOutlineHome/>, iconSolid: <HiHome/> },
-        { label: 'Concours', href: '/notificationsRequest', icon: <HiOutlineInbox/>, iconSolid: <HiAnnotation/> },
+        { label: 'Manage', href: '/manage', icon: <HiOutlineInbox/>, iconSolid: <HiAnnotation/> },
       { label: 'Settings', href: '/UsersAdministration', icon: <HiOutlineUserCircle/>, iconSolid: <HiUserCircle/> },
     ]
 
@@ -75,7 +75,7 @@ const DashboardLayout = ({component}) => {
             </GridItem>
 
             <GridItem w={'full'} h={'full'} position={'relative'}>
-                <Flex bgColor={dashboardBg} zIndex={10} px={10} position={'fixed'} top={0} left={!isExpand ? '210px' :  '50px'} right={0} flex={1} borderBottom={'1px solid'} borderColor={borderColor} py={2} justify={'space-between'} align={'center'}>
+                <Flex bgColor={dashboardBg} zIndex={10} px={10} position={'fixed'} top={0} left={!isExpand ? '210px' :  '50px'} right={0} flex={1} borderBottom={'1px solid'} borderColor={borderColor} py={2} justify={'space-between'} align={'center'} animation={` fadeInDown 0.5s` }>
 
                     <IconButton bgColor={useColorModeValue('white', 'gray.800')} size={'sm'} position={'absolute'} style={{ zIndex: 10 }} left={ !isExpand ? -5 : 4} bottom={ !isExpand ? -5 : -4} onClick={()=>setIsExpand(!isExpand)} variant={"outline"} rounded={'full'}>
                         <Icon transform={`rotate(${!isExpand ? 0 : 180}deg)`} animation={'0.2s ease-in-out'} boxSize={4}>
@@ -96,7 +96,7 @@ const DashboardLayout = ({component}) => {
                         placeholder="Rechercher ou saisir quelque chose..." 
                         />
                         <Icon boxSize={4} position='absolute' right={4} color={textGhost}>
-                            <HiSearch/>
+                            <LuSearch/>
                         </Icon>
                     </HStack>
 
@@ -115,23 +115,23 @@ const DashboardLayout = ({component}) => {
                     </HStack>
                 </Flex>
 
-                <Grid gridTemplateColumns={'3fr 1fr'} w={'full'} h={'full'} position={'relative'}>
+                <Grid gridTemplateColumns={'5fr 2fr'} w={'full'} h={'full'} maxW={'full'} maxH={'full'} position={'relative'}>
 
-                    <GridItem pt={20} px={10} pb={10} maxW={'full'} maxH={'full'} overscrollY={'scroll'}>
+                    <GridItem bgColor={useColorModeValue('#ffffffff', 'gray.950')} pt={20} px={10} pb={10} maxW={'full'} maxH={'full'} overscrollY={'scroll'} animation={`${!isExpand ? 'fadeInLeft' : 'fadeInRight' } 0.8s` }>
                         <Box>
                             {component}
                         </Box>
                     </GridItem>
 
-                    <GridItem borderLeft={'1px solid'} borderColor={borderColor} pt={20} px={6} pb={10} display={{'2xl': 'block', base: 'none'}}>
-                        <Box w={'full'} position={'sticky'} top={20}>
-                            <Heading fontSize={'sm'} fontWeight={500} fontFamily={'Onest'} color={textGhost}>Statistiques rapides</Heading>
+                    <GridItem borderLeft={'1px solid'} w={'1/4'} position={'fixed'} right={'0'} borderColor={borderColor} pt={20} px={2} pb={10} display={{'2xl': 'block', md: 'block', base: 'none'}} animation={`fadeInRight 0.5s` }>
+                        <Box w={'full'} h={'83vh'} pb={20} position={'sticky'} top={20} px={4} overflowY={'scroll'}>
+                            {componentRightSide}
                         </Box>
-                        
                     </GridItem>
                 </Grid>
 
             </GridItem>
+            
 
             
            

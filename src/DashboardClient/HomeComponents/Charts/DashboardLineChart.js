@@ -4,7 +4,7 @@ import { useColorModeValue } from '../../../Components/ui/color-mode';
 
 
 const DashboardLineChart = ({ data = [], data2 = [], height = 250 }) => {
-  const textColor = useColorModeValue('gray.600', 'gray.300');
+  const textColor = useColorModeValue('gray.600', 'white');
   const gridColor = useColorModeValue('gray.200', '#1a1a1a');
 
   const options = {
@@ -17,7 +17,7 @@ const DashboardLineChart = ({ data = [], data2 = [], height = 250 }) => {
         enabled: false,
       },
     },
-    colors: ['#3B82F6', '#8B5CF6'],
+    colors: ['#3B82F6', '#f7762cff'],
     stroke: {
       curve: 'smooth',
       width: 2,
@@ -31,7 +31,7 @@ const DashboardLineChart = ({ data = [], data2 = [], height = 250 }) => {
       labels: {
         style: {
           colors: textColor,
-          fontFamily: 'Montserrat',
+          fontFamily: 'Outfit',
           fontSize: '12px',
         },
       },
@@ -40,8 +40,8 @@ const DashboardLineChart = ({ data = [], data2 = [], height = 250 }) => {
       labels: {
         style: {
           colors: textColor,
-          fontFamily: 'Montserrat',
-          fontSize: '12px',
+          fontFamily: 'Outfit',
+          fontSize: '8px',
         },
         formatter: (value) => {
           return value.toLocaleString('fr-FR');
@@ -51,7 +51,7 @@ const DashboardLineChart = ({ data = [], data2 = [], height = 250 }) => {
     tooltip: {
       theme: useColorModeValue('light', 'dark'),
       style: {
-        fontFamily: 'Montserrat',
+        fontFamily: 'Outfit',
       },
     },
     legend: {

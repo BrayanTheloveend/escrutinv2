@@ -1,13 +1,13 @@
 import { Box, Flex, Icon, Text, VStack } from '@chakra-ui/react'
 import React from 'react'
 
-const OverviewCard = ({ title, subtitles, value, icon , gradient}) => {
+const OverviewCard = ({ title, subtitles, value, icon, label , gradient}) => {
   return (
     <Box
         p="4" // Padding intérieur
-        borderRadius="xl" // Coins arrondis (xl est une valeur prédéfinie)
-        width={{ base: "160px", md: "180px", '2xl': "240px" }}
-        height={{ base: "280px", md: "200px", '2xl': "260px" }}
+        rounded={20} // Coins arrondis (xl est une valeur prédéfinie)
+        width={{ base: "full", md: "full", '2xl': "240px" }}
+        height={{ base: "280px", md: "120px", '2xl': "260px" }}
         // Utilisation de bgGradient pour le dégradé de fond
         
       bgGradient="to-br"
@@ -45,8 +45,8 @@ const OverviewCard = ({ title, subtitles, value, icon , gradient}) => {
 
         {/* Pied de page */}
         <Box>
-          <Text fontSize={{ base: "2", md: "3xl", '2xl': "5xl" }} fontWeight="bold" fontFamily={'Outfit'} mt={2}>{value}</Text>
-          <Text fontSize="xs" fontWeight="medium" opacity={0.7}>Avg. Completed</Text>
+          <Text fontSize={{ base: "2", md: "xl", '2xl': "4xl" }} fontWeight={{"2xl": "bold", md: 500}} fontFamily={'Outfit'} mt={2}>{value}</Text>
+          <Text fontSize="xs" fontFamily={'Inter'} fontWeight="medium" opacity={0.7}>{label}</Text>
         </Box>
       </Flex>
     </Box>

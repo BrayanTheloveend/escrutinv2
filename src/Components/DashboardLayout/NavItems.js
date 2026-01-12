@@ -7,7 +7,7 @@ import { useColorModeValue } from '../ui/color-mode';
 const NavItems = ({data, isExpand}) => {
 
     const location = useLocation();
-    const isActive = location.pathname === data.href;
+    //const isActive = location.pathname === data.href;
     const activeBgColor = useColorModeValue('gray.100', 'gray.900')
 
   return (
@@ -26,7 +26,7 @@ const NavItems = ({data, isExpand}) => {
         }
        }}  asChild>
       <RouterNavLink to={data.href}>
-            <HStack fontFamily={'Onest'}  letterSpacing={-0.5}>
+            <HStack fontFamily={'Inter'}  letterSpacing={-0.5}>
                 <Icon boxSize={5}>
                    {data.icon}
                 </Icon> 
