@@ -195,8 +195,8 @@ const Home = () => {
               <Text fontSize={'xs'} lineClamp={2} fontFamily={'Inter'} color={'gray.500'}>Ce mois</Text>
             </Box>    
 
-            <HStack align={'center'} justify={'center'} gap={2}>
-              <Text fontSize={{ base: "xl", md: "xl", '2xl': "4xl" }} fontWeight="500" fontFamily={'Outfit'} mt={2}>150 000$</Text>
+            <HStack align={{md: 'end', '2xl': 'center'}} flexDir={{md: 'column', '2xl': 'row'}} justify={'center'} gap={2}>
+              <Text fontSize={{ base: "xl", md: "md", '2xl': "4xl" }} fontWeight="500" fontFamily={'Outfit'} mt={2}>150 000$</Text>
               <Tag.Root size={'sm'} fontSize={'xs'} rounded={'full'} fontFamily={'Stack Sans Text'} colorPalette={"red"}>
                 <Tag.Label>+5%</Tag.Label>
               </Tag.Root>
@@ -212,8 +212,8 @@ const Home = () => {
               <Text fontSize={'xs'} lineClamp={2} fontFamily={'Inter'} color={'gray.500'}>Ce mois</Text>
             </Box>    
 
-            <HStack align={'center'} justify={'center'} gap={2}>
-              <Text fontSize={{ base: "xl", md: "xl", '2xl': "4xl" }} fontWeight="500" fontFamily={'Outfit'} mt={2}>150 000$</Text>
+            <HStack align={{md: 'end', '2xl': 'center'}} flexDir={{md: 'column', '2xl': 'row'}} gap={2}>
+              <Text fontSize={{ base: "xl", md: "md", '2xl': "4xl" }} fontWeight="500" fontFamily={'Outfit'} mt={2}>150 000$</Text>
               <Tag.Root size={'sm'} fontSize={'xs'} rounded={'full'} fontFamily={'Stack Sans Text'} colorPalette={"red"}>
                 <Tag.Label>+5%</Tag.Label>
               </Tag.Root>
