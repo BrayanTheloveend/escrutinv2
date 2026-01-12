@@ -7,7 +7,7 @@ const OverviewCard = ({ title, subtitles, value, icon, label , gradient}) => {
         p="4" // Padding intérieur
         rounded={20} // Coins arrondis (xl est une valeur prédéfinie)
         width={{ base: "full", md: "full", '2xl': "240px" }}
-        height={{ base: "280px", md: "120px", '2xl': "260px" }}
+        height={{ base: "280px", md: "160px", '2xl': "260px" }}
         // Utilisation de bgGradient pour le dégradé de fond
         
       bgGradient="to-br"
@@ -24,20 +24,20 @@ const OverviewCard = ({ title, subtitles, value, icon, label , gradient}) => {
         {/* En-tête */}
         <Flex justify="space-between" fontFamily={'Onest'} align="flex-start">
           <VStack align="start" gap={0} spacing={0}>
-            <Text fontSize="sm" fontWeight="medium" lineHeight="short">{title}</Text>
-            <Text fontSize="sm" fontWeight="medium" lineHeight="short">{subtitles}</Text>
+            <Text fontSize={{md: "sm", '2xl': 'md'}} fontWeight="medium" lineHeight="short">{title}</Text>
+            <Text fontSize={{md: "xs", '2xl': 'sm'}} fontWeight="medium" lineHeight="short">{subtitles}</Text>
           </VStack>
           <Box
             bg="rgba(199, 192, 192, 0.3)"
             borderRadius="full"
-            p="2"
+            p={{md: "2", '2xl': 3}}
             display="flex"
             justifyContent="center"
             alignItems="center"
             backdropFilter="blur(5px)" // Flou supplémentaire pour l'icône
           >
             {/* Utilisation d'un composant Icon */}
-            <Icon w={4} h={4} color="black" >
+            <Icon w={{md: 4, '2xl': 6}} h={{md: 4, '2xl': 6}} color="black" >
               {icon}
             </Icon>
           </Box>
@@ -46,7 +46,7 @@ const OverviewCard = ({ title, subtitles, value, icon, label , gradient}) => {
         {/* Pied de page */}
         <Box>
           <Text fontSize={{ base: "2", md: "xl", '2xl': "4xl" }} fontWeight={{"2xl": "bold", md: 500}} fontFamily={'Outfit'} mt={2}>{value}</Text>
-          <Text fontSize="xs" fontFamily={'Inter'} fontWeight="medium" opacity={0.7}>{label}</Text>
+          <Text fontSize={{md: "xs", '2xl': 'sm'}} fontFamily={'Inter'} fontWeight="medium" opacity={0.7}>{label}</Text>
         </Box>
       </Flex>
     </Box>

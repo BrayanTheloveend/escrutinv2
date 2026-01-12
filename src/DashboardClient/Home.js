@@ -84,8 +84,8 @@ const Home = () => {
   return (
 
     <Box>
-      <Text fontSize="2xl" fontWeight="bold" fontFamily={'Onest'}>Tableau de bord</Text>
-      <SimpleGrid columns={4} mt={5} gap={{'2xl': 6, md: 4, base: 2}} >
+      <Text fontSize={{md: "2xl", '2xl': '4xl'}} fontWeight="bold" fontFamily={'Onest'}>Tableau de bord</Text>
+      <SimpleGrid columns={{md: 4, '2xl': 7}} mt={5} gap={{'2xl': 16, md: 4, base: 2}} >
         {overviewData.map((data, index) => (
           <OverviewCard
             key={index}
@@ -111,7 +111,7 @@ const Home = () => {
       </SimpleGrid>
 
       <SimpleGrid
-        columns={4}
+        columns={{md: 4, '2xl': 7}}
         gap={4}
         mt={4}  
       >
@@ -187,24 +187,42 @@ const Home = () => {
         
       </SimpleGrid> 
       
-      <Box mt={6} p={4} bgColor={cardColor} color={useColorModeValue('gray.950', 'white')} fontSize={"xs"} rounded={20} boxShadow={'sm'} overflow={'hidden'}>
-        <Flex justifyContent={'space-between'} alignItems={'center'}>
-          <Box px={4}>
-            <Text fontSize="md" fontWeight="medium" lineHeight="short" fontFamily={'Onest'}>Activitées des transactions</Text>
-            <Text fontSize={'xs'} lineClamp={2} fontFamily={'Inter'} color={'gray.500'}>Ce mois</Text>
-          </Box>    
+      <SimpleGrid columns={{md: 2}} gap={4}>
+        <Box mt={6} p={4} bgColor={cardColor} color={useColorModeValue('gray.950', 'white')} fontSize={"xs"} rounded={20} boxShadow={'sm'} overflow={'hidden'}>
+          <Flex justifyContent={'space-between'} alignItems={'center'}>
+            <Box px={4}>
+              <Text fontSize="md" fontWeight="medium" lineHeight="short" fontFamily={'Onest'}>Activitées des transactions</Text>
+              <Text fontSize={'xs'} lineClamp={2} fontFamily={'Inter'} color={'gray.500'}>Ce mois</Text>
+            </Box>    
 
-          <HStack align={'center'} justify={'center'} gap={2}>
-            <Text fontSize={{ base: "xl", md: "xl", '2xl': "4xl" }} fontWeight="500" fontFamily={'Outfit'} mt={2}>150 000$</Text>
-             <Tag.Root size={'sm'} fontSize={'xs'} rounded={'full'} fontFamily={'Stack Sans Text'} colorPalette={"red"}>
-              <Tag.Label>+5%</Tag.Label>
-            </Tag.Root>
-          </HStack>    
-        </Flex>
-        <DashboardLineChart data={chartSeries[0].data} data2={chartSeries[1].data}/>
-      </Box>  
+            <HStack align={'center'} justify={'center'} gap={2}>
+              <Text fontSize={{ base: "xl", md: "xl", '2xl': "4xl" }} fontWeight="500" fontFamily={'Outfit'} mt={2}>150 000$</Text>
+              <Tag.Root size={'sm'} fontSize={'xs'} rounded={'full'} fontFamily={'Stack Sans Text'} colorPalette={"red"}>
+                <Tag.Label>+5%</Tag.Label>
+              </Tag.Root>
+            </HStack>    
+          </Flex>
+          <DashboardLineChart data={chartSeries[0].data} data2={chartSeries[1].data}/>
+        </Box> 
+        
+        <Box mt={6} p={4} bgColor={cardColor} color={useColorModeValue('gray.950', 'white')} fontSize={"xs"} rounded={20} boxShadow={'sm'} overflow={'hidden'}>
+          <Flex justifyContent={'space-between'} alignItems={'center'}>
+            <Box px={4}>
+              <Text fontSize="md" fontWeight="medium" lineHeight="short" fontFamily={'Onest'}>Activitées des transactions</Text>
+              <Text fontSize={'xs'} lineClamp={2} fontFamily={'Inter'} color={'gray.500'}>Ce mois</Text>
+            </Box>    
 
-      <SimpleGrid gap={4} columns={2} mt={6}>
+            <HStack align={'center'} justify={'center'} gap={2}>
+              <Text fontSize={{ base: "xl", md: "xl", '2xl': "4xl" }} fontWeight="500" fontFamily={'Outfit'} mt={2}>150 000$</Text>
+              <Tag.Root size={'sm'} fontSize={'xs'} rounded={'full'} fontFamily={'Stack Sans Text'} colorPalette={"red"}>
+                <Tag.Label>+5%</Tag.Label>
+              </Tag.Root>
+            </HStack>    
+          </Flex>
+          <DashboardLineChart data={chartSeries[0].data} data2={chartSeries[1].data}/>
+        </Box>  
+      </SimpleGrid>
+      <SimpleGrid gap={4} columns={{md: 2, '2xl': 4}} mt={6}>
         <GridItem p={4} bgColor={cardColor} rounded={20} boxShadow={'sm'}>
           <Flex justify={'space-between'} align={'center'}>
             <Text fontSize="md" fontWeight="medium" lineHeight="short" fontFamily={'Onest'}>Tâches</Text>
@@ -243,8 +261,12 @@ const Home = () => {
                 Projects
               </Tabs.Trigger>
             </Tabs.List>
-            <Tabs.Content value="members">Manage your team members</Tabs.Content>
-            <Tabs.Content value="projects">Manage your projects</Tabs.Content>
+            <Tabs.Content value="members">
+              <Text fontSize={'sm'} fontFamily={'Inter'} fontWeight={400} letterSpacing={-0.1}>Manage your team members</Text>
+            </Tabs.Content>
+            <Tabs.Content value="projects">
+              Manage your projects
+            </Tabs.Content>
           </Tabs.Root>
         </GridItem>
       </SimpleGrid> 

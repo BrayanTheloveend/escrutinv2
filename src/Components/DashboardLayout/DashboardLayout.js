@@ -115,7 +115,7 @@ const DashboardLayout = ({component, componentRightSide}) => {
                     </HStack>
                 </Flex>
 
-                <Grid gridTemplateColumns={'5fr 2fr'} w={'full'} h={'full'} maxW={'full'} maxH={'full'} position={'relative'}>
+                <Grid gridTemplateColumns={{md: '5fr 2fr', '2xl': '6fr 2fr'}} w={'full'} h={'100vh'} maxW={'full'} maxH={'full'} position={'relative'}>
 
                     <GridItem bgColor={useColorModeValue('#ffffffff', 'gray.950')} pt={20} px={10} pb={10} maxW={'full'} maxH={'full'} overscrollY={'scroll'} animation={`${!isExpand ? 'fadeInLeft' : 'fadeInRight' } 0.8s` }>
                         <Box>
@@ -123,7 +123,7 @@ const DashboardLayout = ({component, componentRightSide}) => {
                         </Box>
                     </GridItem>
 
-                    <GridItem borderLeft={'1px solid'} w={'1/4'} position={'fixed'} right={'0'} borderColor={borderColor} pt={20} px={2} pb={10} display={{'2xl': 'block', md: 'block', base: 'none'}} animation={`fadeInRight 0.5s` }>
+                    <GridItem borderLeft={'1px solid'} w={{ md: '1/4', '2xl': '1/5'}} position={'fixed'} right={'0'} borderColor={borderColor} pt={20} px={2} pb={10} display={{'2xl': 'block', md: 'block', base: 'none'}} animation={`fadeInRight 0.5s` }>
                         <Box w={'full'} h={'83vh'} pb={20} position={'sticky'} top={20} px={4} overflowY={'scroll'}>
                             {componentRightSide}
                         </Box>

@@ -74,7 +74,7 @@ const ManageUser = () => {
 
   return (
     <Box>
-      <Text fontSize="2xl" fontWeight="bold" fontFamily={'Onest'}>Gestion des Candidates</Text>
+      <Text fontSize={{md: "2xl", '2xl': '4xl'}} fontWeight="bold" fontFamily={'Onest'}>Gestion des Candidates</Text>
       <Text fontSize="sm" color={textGhost}  fontFamily={'Inter'}>Toutes les candidates ° 15</Text>
 
       <Tabs.Root mt={10} defaultValue="first">
