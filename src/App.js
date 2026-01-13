@@ -9,6 +9,7 @@ import { Provider } from 'react-redux';
 import store from './Redux/store';
 import Finances from './DashboardClient/Finances';
 import {Toaster} from './Components/ui/toaster'
+import MainHome from './Views/MainHome';
 
 const App=()=> {
   return (
@@ -19,6 +20,7 @@ const App=()=> {
           <Route path='/Finances' element={<DashboardLayout component={<Finances/>} componentRightSide={<Main/>}  />} />
           <Route path='/manage' element={<DashboardLayout component={<ManageUser/>} componentRightSide={<MainManage/>}  />} />
           <Route path='/login' element={<Login/>} />
+          <Route path='/' element={<MainHome/>} />
         </Routes>
       </BrowserRouter>
       <Toaster />
