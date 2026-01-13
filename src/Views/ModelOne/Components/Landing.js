@@ -9,8 +9,8 @@ const Landing = () => {
     const cardColor = useColorModeValue('white', 'gray.900')
     
   return (
-        <Box borderBottom={'1px solid'} borderColor={useColorModeValue('gray.100', 'gray.800')} w={'full'} px={10} py={6} rounded={40} h={'full'} bgGradient={'to-b'} gradientFrom={'gray.500'}  gradientTo={'whiteAlpha.100'}>
-          <Grid gridTemplateColumns={'4fr 3fr'} py={8}>
+        <Box borderBottom={'1px solid'} borderColor={useColorModeValue('gray.100', 'gray.800')} w={'full'} px={10} py={6} rounded={40} h={'full'} bgGradient={'to-b'} gradientFrom={'gray.500'}  gradientTo={useColorModeValue('gray.100', 'gray.800')}>
+          <Grid px={{md: 'inherit', '2xl': "19%"}} gridTemplateColumns={'4fr 3fr'} py={{md: 8, '2xl': '10%'}}>
 
             {/* LeftSide */}
             <GridItem>
@@ -21,10 +21,10 @@ const Landing = () => {
                   </Icon>
                 </Box>
                 <Box>
-                  <Heading fontFamily={'Onest'}>
+                  <Heading fontFamily={'Onest'} fontSize={{md: 'xl', '2xl': '2xl'}}>
                     Qui es le meilleur Artiste ?
                   </Heading>
-                  <Text fontSize={'sm'}>
+                  <Text fontSize={{md: 'sm', '2xl': 'md'}}>
                     Vient et votre pour ton favoris
                   </Text>
                 </Box>
@@ -39,41 +39,51 @@ const Landing = () => {
                 bottom: -10,
                 bgColor: 'gray.400'
               }}
-              fontSize={'7xl'} color={useColorModeValue('gray.800', 'white')} lineHeight={1.1} fontFamily={'Momo Trust Display'} mt={8}>
+              fontSize={{md: '7xl', '2xl': '9xl'}} color={useColorModeValue('gray.800', 'white')} lineHeight={1.1} fontFamily={'Momo Trust Display'} mt={{md: 8, '2xl': 20}}>
                 Best Talent Cameroun
 
-                <Span position={'absolute'} top={-8} fontFamily={'Parisienne'} textAlign={'right'} fontSize={'2xl'}>
+                <Span position={'absolute'} top={-8} fontFamily={'Parisienne'} textAlign={'right'} fontSize={{md: '2xl', '2xl': '4xl'}}>
                   édition 6
                 </Span>
               </Heading>
 
 
-              <Box mt={16} fontFamily={'Inter'}>
-                <Text fontSize={'xl'} maxW={'md'}>
+              <Box mt={{md: 16, '2xl': 20}} fontFamily={'Inter'}>
+                <Text fontSize={{md: 'xl', '2xl': '2xl' }} maxW={{md: 'md', '2xl': 'xl'}}>
                   N'attendez pas la fin pour vous affirmez.
                   Ton vote peux faire toute la différence
                 </Text>
               </Box>
 
-              <HStack mt={8} gap={4}>
-                <Button p={5} bgGradient={'to-r'} gradientFrom={'blue.600'} gradientTo={'orange.500'} rounded={'full'}>
+              <HStack mt={{md: 8, '2xl': 10}} gap={4}>
+                <Button size={{md: 'md', '2xl': '2xl'}} p={5} 
+                 rounded={'full'}
+                 fontFamily={'Outfit'}
+                 //bgGradient={'to-r'} gradientFrom={'blue.600'} gradientTo={'orange.500'}
+                  colorPalette={'blue'}
+                 >
                   Votez maintenant
                 </Button>
 
-                <Link fontWeight={'medium'} fontFamily={'Outfit'}>
-                  participez au concours 
-                  <Icon>
-                    <LuArrowUpRight/>
-                  </Icon>
-                </Link>
+                <Button size={{md: 'md', '2xl': '2xl'}} p={5} 
+                 rounded={'full'}
+                 fontFamily={'Outfit'}
+                 variant={'surface'}
+                 //bgGradient={'to-r'} gradientFrom={'blue.600'} gradientTo={'orange.500'}
+                  colorPalette={'blue'}
+                 >
+                  Participez au concours 
+                </Button>
+
+              
               </HStack>
             </GridItem>
 
             {/* RightSide */}
-            <GridItem>
+            <GridItem placeItems={{md: 'inherit', '2xl': 'end'}}>
               
               <Box>
-                <Box display={'flex'} position={'relative'} justifyContent={'center'} alignItems={'center'} w={'320px'} h={'500px'} bgColor={'blue.300'} rounded={24}>
+                <Box display={'flex'} position={'relative'} justifyContent={'center'} alignItems={'center'} w={{md: '320px', '2xl': '520px'}} h={{md: '500px', '2xl': '800px'}} bgColor={'blue.300'} rounded={24}>
                   
                   <IconButton size={'xl'} rounded={'full'}>
                     <LuPlay/>

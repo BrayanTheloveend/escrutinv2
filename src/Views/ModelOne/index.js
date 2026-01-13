@@ -1,10 +1,9 @@
-import { Box, Button, Container, Flex, Grid, GridItem, Heading, HStack, Icon, IconButton, Image, Link, Span, Text } from '@chakra-ui/react'
+import { Box, Heading,  Icon, IconButton,  Span,  } from '@chakra-ui/react'
 import React from 'react'
 import Navbar from './Components/Navbar'
 import { useColorMode, useColorModeValue } from '../../Components/ui/color-mode'
-import { LuArrowUpRight, LuCheck, LuFingerprint, LuGift, LuMoon, LuMousePointer2, LuPlay, LuSun } from 'react-icons/lu'
-import { HiCalendar } from 'react-icons/hi'
-import Partners from './Components/Partners'
+import {  LuMoon,  LuSun } from 'react-icons/lu'
+
 import Landing from './Components/Landing'
 
 const ModelOne = () => {
@@ -30,18 +29,15 @@ const ModelOne = () => {
 
       {/* Concours infos */}
 
-      <Container centerContent mt={14} px={12}>
-        <Heading pb={14} fontSize={'4xl'} fontFamily={"Poppins"}>
-          Le point de <Span color={'blue.500'}>départ</Span>
-        </Heading>
+      <Heading textAlign={'center'} my={{md: 14, '2xl': 24}} fontSize={{md: '4xl', '2xl': '5xl'}} fontFamily={"Onest"}>
+        Le point de <Span color={'blue.500'}>départ</Span>
+      </Heading>
 
-        <Flex gap={8}>
+      
 
-          <Box rounded={20}>
 
-          </Box>
-        </Flex>
-      </Container>
+
+     
 
 
 
