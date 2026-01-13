@@ -20,7 +20,7 @@ const DashboardLayout = ({component, componentRightSide}) => {
     const navItems = [
         { label: 'Tableau de Bord', href: '/dashboard', icon:  <HiOutlineHome/>, iconSolid: <HiHome/> },
         { label: 'Manage', href: '/manage', icon: <HiOutlineInbox/>, iconSolid: <HiAnnotation/> },
-      { label: 'Settings', href: '/UsersAdministration', icon: <HiOutlineUserCircle/>, iconSolid: <HiUserCircle/> },
+      { label: 'Finances', href: '/Finances', icon: <HiOutlineUserCircle/>, iconSolid: <HiUserCircle/> },
     ]
 
     useEffect(() => {
