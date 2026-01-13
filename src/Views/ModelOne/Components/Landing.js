@@ -9,7 +9,7 @@ const Landing = () => {
     const cardColor = useColorModeValue('white', 'gray.900')
     
   return (
-        <Box borderBottom={'1px solid'} borderColor={useColorModeValue('gray.100', 'gray.800')} w={'full'} px={10} py={6} rounded={40} h={'full'} bgGradient={'to-b'} gradientFrom={'gray.500'}  gradientTo={useColorModeValue('gray.100', 'gray.800')}>
+        <Box borderBottom={'1px solid'} borderColor={useColorModeValue('gray.100', 'gray.800')} w={'full'} px={10} py={6} rounded={40} h={'full'} bgGradient={'to-tr'} gradientFrom={useColorModeValue('blue.400', 'blue.500')}  gradientTo={useColorModeValue('orange.500', 'orange.800')}>
           <Grid px={{md: 'inherit', '2xl': "19%"}} gridTemplateColumns={'4fr 3fr'} py={{md: 8, '2xl': '10%'}}>
 
             {/* LeftSide */}
@@ -37,7 +37,7 @@ const Landing = () => {
                 h: '2px',
                 rounded: 'full',
                 bottom: -10,
-                bgColor: 'gray.400'
+                bgColor: useColorModeValue('gray.700','gray.100')
               }}
               fontSize={{md: '7xl', '2xl': '9xl'}} color={useColorModeValue('gray.800', 'white')} lineHeight={1.1} fontFamily={'Momo Trust Display'} mt={{md: 8, '2xl': 20}}>
                 Best Talent Cameroun
