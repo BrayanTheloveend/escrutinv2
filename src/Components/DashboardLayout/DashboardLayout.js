@@ -40,7 +40,7 @@ const DashboardLayout = ({component, componentRightSide}) => {
 
 
     return (
-        <Grid bg={dashboardBg} px={isExpand ?  4 : 'unset'} position={'relative'} w='100%'  gap={0}  gridTemplateColumns={{md: `${!isExpand ? '210px' :  '50px' }  1fr`, base: '1fr'}}>
+        <Grid bg={dashboardBg} px={isExpand ?  4 : 'unset'} position={'fixed'} w='100vw' h={'100vh'}  gap={0}  gridTemplateColumns={{md: `${!isExpand ? '210px' :  '50px' }  1fr`, base: '1fr'}}>
             {/* Sidebars */}
 
             <GridItem px={!isExpand ? 3 : 'unset'} borderRight={!isExpand ? "1px solid" : "unset"} borderColor={borderColor} position={'sticky'} w={!isExpand ? '210px' :  '50px'} zIndex={isExpand ? 20 : 10} bgColor={dashboardBg}  left={!isExpand ? 0 :  2} h={'100vh'} top={0} justifyContent={'center'} display={{md: 'block', base: 'none'}}>
@@ -74,7 +74,7 @@ const DashboardLayout = ({component, componentRightSide}) => {
                 
             </GridItem>
 
-            <GridItem w={'full'} h={'full'} position={'relative'}>
+            <GridItem w={'full'} h={'100vh'} position={'relative'} overflowY={'scroll'}>
                 <Flex bgColor={dashboardBg} zIndex={10} px={10} position={'fixed'} top={0} left={!isExpand ? '210px' :  '50px'} right={0} flex={1} borderBottom={'1px solid'} borderColor={borderColor} py={2} justify={'space-between'} align={'center'} animation={` fadeInDown 0.5s` }>
 
                     <IconButton bgColor={useColorModeValue('white', 'gray.800')} size={'sm'} position={'absolute'} style={{ zIndex: 10 }} left={ !isExpand ? -5 : 4} bottom={ !isExpand ? -5 : -4} onClick={()=>setIsExpand(!isExpand)} variant={"outline"} rounded={'full'}>
@@ -123,7 +123,7 @@ const DashboardLayout = ({component, componentRightSide}) => {
                         </Box>
                     </GridItem>
 
-                    <GridItem borderLeft={'1px solid'} w={{ md: '1/4', '2xl': '1/5'}} position={'fixed'} right={'0'} borderColor={borderColor} pt={20} px={2} pb={10} display={{'2xl': 'block', md: 'block', base: 'none'}} animation={`fadeInRight 0.5s` }>
+                    <GridItem borderLeft={'1px solid'} w={{ md: '1/4', '2xl': '1/5'}} position={'fixed'} right={'0'} borderColor={borderColor} pt={20} px={2} pb={10} display={{'2xl': 'block', md: 'block', base: 'none'}} animation={`fadeInRight 0.5s` } h={'100vh'}>
                         <Box w={'full'} h={'83vh'} pb={20} position={'sticky'} top={20} px={4} overflowY={'scroll'}>
                             {componentRightSide}
                         </Box>

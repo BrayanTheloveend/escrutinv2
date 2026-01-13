@@ -181,14 +181,14 @@ const Home = () => {
 
         <GridItem display={'flex'} gap={2} alignItems={'center'}>
         
-          <GrowthRateWidget value={75} shadowOn={true} />
+          <GrowthRateWidget value={75} percentage={false} shadowOn={true} />
           <GrowthRateWidget value={52} shadowOn={true} color={'blue'} />
           
         </GridItem>
         
       </SimpleGrid> 
       
-      <SimpleGrid mt={4} columns={{md: 2}} gap={4}>
+      <SimpleGrid mt={4} gap={4}>
         <Box p={4} bgColor={cardColor} color={useColorModeValue('gray.950', 'white')} fontSize={"xs"} rounded={20} boxShadow={'sm'} overflow={'hidden'}>
           <Flex justifyContent={'space-between'} alignItems={'center'}>
             <Box px={4}>
@@ -206,7 +206,7 @@ const Home = () => {
           <DashboardLineChart data={chartSeries[0].data} data2={chartSeries[1].data}/>
         </Box> 
         
-        <Box p={4} bgColor={cardColor} color={useColorModeValue('gray.950', 'white')} fontSize={"xs"} rounded={20} boxShadow={'sm'} overflow={'hidden'}>
+        {/* <Box p={4} bgColor={cardColor} color={useColorModeValue('gray.950', 'white')} fontSize={"xs"} rounded={20} boxShadow={'sm'} overflow={'hidden'}>
           <Flex justifyContent={'space-between'} alignItems={'center'}>
             <Box px={4}>
               <Text fontSize="md" fontWeight="medium" lineHeight="short" fontFamily={'Onest'}>Total des depenses</Text>
@@ -222,7 +222,7 @@ const Home = () => {
           </Flex>
 
           <DashboardBarChart data={chartSeries[0].data} colors={'#c22c2cff'}/>
-        </Box>  
+        </Box>   */}
       </SimpleGrid>
 
       <SimpleGrid gap={4} columns={{md: 2, '2xl': 4}} mt={4}>

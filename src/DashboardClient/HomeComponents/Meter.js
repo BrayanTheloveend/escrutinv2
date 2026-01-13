@@ -23,6 +23,7 @@ const GrowthRateWidget = ({ value, label, color,  shadowOn }) => {
       <ProgressCircle.Root
         size={'xl'}
         colorPalette={color || "orange"}
+        
         value={value} // La valeur de progression (ici 36)
       >
         <ProgressCircle.Circle css={{ "--thickness": "4px" }}>
