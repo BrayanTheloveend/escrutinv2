@@ -57,7 +57,7 @@ const ModelOne = () => {
       </Box>
 
         <Box 
-          maxW={'260px'} 
+          maxW={{md: '260px', '2xl': '310px'}} 
           boxShadow={'sm'} 
           bgColor={cardColor} 
           border={'2px solid'} 
@@ -87,33 +87,34 @@ const ModelOne = () => {
 
 
         <Box>
-          <VStack spacing={4}>
-                <HStack gap={3}  justify="center" w="full" >
-                  <VStack boxShadow={'sm'} border={'1px solid'} borderColor={useColorModeValue('gray.100', 'gray.600')} p={4} px={6} spacing={1} rounded={12}>
-                    <Text fontFamily={'Outfit'} fontSize="3xl" fontWeight="extrabold">
-                      {String(25).padStart(2, '0')}
-                    </Text>
-                    <Text fontSize="xs" opacity={0.9}>Jours</Text>
-                  </VStack>
-                  <Text fontSize="2xl" opacity={0.7}>:</Text>
-                  <VStack boxShadow={'sm'} border={'1px solid'} borderColor={useColorModeValue('gray.100', 'gray.600')} p={4} px={6} spacing={1} rounded={12}>
-                    <Text fontFamily={'Outfit'} fontSize="3xl" fontWeight="bold">
-                      {String(15).padStart(2, '0')}
-                    </Text>
-                    <Text fontSize="xs" opacity={0.9}>Heures</Text>
-                  </VStack>
-                  <Text fontSize="2xl" opacity={0.7}>:</Text>
-                  <VStack boxShadow={'sm'} border={'1px solid'} borderColor={useColorModeValue('gray.100', 'gray.600')} p={4} px={6} spacing={1} rounded={12}>
-                    <Text fontFamily={'Outfit'} fontSize="3xl" fontWeight="bold">
-                      {String('08').padStart(2, '0')}
-                    </Text>
-                    <Text fontSize="xs" opacity={0.9}>Minutes</Text>
-                  </VStack>
-                </HStack>
+          <VStack spacing={4} gap={4}>
+            <Text fontFamily={'Lobster Two'} fontSize={{md: '2xl', '2xl': '3xl'}}>Temps restant</Text>
+            <HStack gap={3}  justify="center" w="full" zIndex={20} position={'relative'}>
+              <VStack bgColor={cardColor} boxShadow={'sm'} gap={{md: 'inherit', '2xl':  0}} border={'1px solid'} borderColor={useColorModeValue('gray.100', 'gray.600')} p={4} px={6} spacing={1} rounded={12}>
+                <Text fontFamily={'Outfit'} fontSize={{md: "3xl", '2xl': '5xl'}} fontWeight="extrabold">
+                  {String(25).padStart(2, '0')}
+                </Text>
+                <Text fontSize={{md: "xs", '2xl': 'sm'}} opacity={0.9}>Jours</Text>
               </VStack>
+              <Text fontSize="2xl" opacity={0.7}>:</Text>
+              <VStack bgColor={cardColor} boxShadow={'sm'} gap={{md: 'inherit', '2xl':  0}} border={'1px solid'} borderColor={useColorModeValue('gray.100', 'gray.600')} p={4} px={6} spacing={1} rounded={12}>
+                <Text fontFamily={'Outfit'} fontSize={{md: "3xl", '2xl': '5xl'}} fontWeight="bold">
+                  {String(15).padStart(2, '0')}
+                </Text>
+                <Text fontSize={{md: "xs", '2xl': 'sm'}} opacity={0.9}>Heures</Text>
+              </VStack>
+              <Text fontSize="2xl" opacity={0.7}>:</Text>
+              <VStack bgColor={cardColor} boxShadow={'sm'} gap={{md: 'inherit', '2xl':  0}} border={'1px solid'} borderColor={useColorModeValue('gray.100', 'gray.600')} p={4} px={5} spacing={1} rounded={12}>
+                <Text fontFamily={'Outfit'} fontSize={{md: "3xl", '2xl': '5xl'}} fontWeight="bold">
+                  {String('08').padStart(2, '0')}
+                </Text>
+                <Text fontSize={{md: "xs", '2xl': 'sm'}} opacity={0.9}>Minutes</Text>
+              </VStack>
+            </HStack>
+          </VStack>
         </Box>
 
-        <Box maxW={'260px'} boxShadow={'sm'} bgColor={cardColor} border={'2px solid'} borderColor={useColorModeValue('orange.200', 'orange.800')} p={6} rounded={24} roundedTopRight={10}>
+        <Box maxW={{md: '260px', '2xl': '310px'}} boxShadow={'sm'} bgColor={cardColor} border={'2px solid'} borderColor={useColorModeValue('orange.200', 'orange.800')} p={6} rounded={24} roundedTopRight={10}>
           <Box float={'right'} display={'flex'} justifyContent={'center'} alignItems={'center'} w={12} h={12} rounded={'full'} bgColor={'orange.500'} color={'white'}>
             <Icon boxSize={5}>
               <LuCrown/>
