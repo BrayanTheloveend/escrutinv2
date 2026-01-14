@@ -68,18 +68,18 @@ const ModelOne = () => {
           backdropFilter={'blur(10px)'}
           >
           <Box float={'right'} display={'flex'} justifyContent={'center'} alignItems={'center'} w={12} h={12} rounded={'full'} bgColor={'blue.500'} color={'white'}>
-            <Icon boxSize={5}>
+            <Icon boxSize={{md: 4, '2xl': 5}}>
               <LuCalendar/>
             </Icon>
           </Box>
           <Box mt={2}>
-            <Text color={textGhost} letterSpacing={-0.5} fontWeight={'medium'} fontSize={'sm'}>
+            <Text color={textGhost} letterSpacing={-0.5} fontWeight={'medium'} fontSize={{md: 'sm', '2xl': 'md'}}>
               Fin du concours
             </Text>
-            <Heading fontFamily={'Onest'} letterSpacing={-0.5}>
+            <Heading fontFamily={'Onest'} fontSize={{md: 'xl', '2xl': '2xl'}} letterSpacing={-0.5}>
               20 Janvier 2026
             </Heading>
-            <Text mt={2} lineClamp={4} fontSize={'sm'}>
+            <Text mt={{md: 2, '2xl': 4}} fontSize={{md: 'sm', '2xl': 'md'}} lineClamp={4}>
               Nous vous encourageons à consulter notre site web pour des détails supplémentaires.
             </Text>
           </Box>
@@ -115,19 +115,19 @@ const ModelOne = () => {
         </Box>
 
         <Box maxW={{md: '260px', '2xl': '310px'}} boxShadow={'sm'} bgColor={cardColor} border={'2px solid'} borderColor={useColorModeValue('orange.200', 'orange.800')} p={6} rounded={24} roundedTopRight={10}>
-          <Box float={'right'} display={'flex'} justifyContent={'center'} alignItems={'center'} w={12} h={12} rounded={'full'} bgColor={'orange.500'} color={'white'}>
-            <Icon boxSize={5}>
+          <Box float={'right'} display={'flex'} justifyContent={'center'} alignItems={'center'} w={{md: 10, '2xl': 12}} h={{md: 10, '2xl': 12}} rounded={'full'} bgColor={'orange.500'} color={'white'}>
+            <Icon boxSize={{md: 4, '2xl' :5}}>
               <LuCrown/>
             </Icon>
           </Box>
           <Box mt={2}>
-            <Text color={textGhost} letterSpacing={-0.5} fontWeight={'medium'} fontSize={'sm'}>
+            <Text color={textGhost} letterSpacing={-0.5} fontWeight={'medium'} fontSize={{md: 'sm', '2xl': 'md'}}>
               Participation
             </Text>
-            <Heading fontFamily={'Outfit'} letterSpacing={-0.5}>
+            <Heading fontSize={{md: 'xl', '2xl': '2xl'}} fontFamily={'Outfit'} letterSpacing={-0.5}>
               158 K
             </Heading>
-            <Text mt={2} lineClamp={4} fontSize={'sm'}>
+            <Text mt={{md: 2, '2xl': 4}} fontSize={{md: 'sm', '2xl': 'md'}} lineClamp={4}>
               Nous sommes ravie de compté plus de <Span fontFamily={'Outfit'}>150 000</Span> Visiteurs pour cette evenements.
             </Text>
           </Box>
