@@ -91,7 +91,7 @@ const ModelOne = () => {
 
       <OtherCandidates/>
 
-      <Box px={10} mt={10}>
+      <Box px={{md: 10, '2xl': '15%'}} mt={10}>
         <Heading mb={14} letterSpacing={-0.5} fontFamily={'Poppins'} textAlign={'center'} fontSize={'4xl'}>
           Nos Partenaires
         </Heading>

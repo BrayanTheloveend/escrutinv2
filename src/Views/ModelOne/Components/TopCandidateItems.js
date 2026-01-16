@@ -8,7 +8,7 @@ const TopCandidateItems = ({data, place}) => {
     const cardColor = useColorModeValue('white', 'gray.900')
 
   return (
-    <Box className='group' overflow={'hidden'} transform={place === 'first' && 'translateY(-30px)'} cursor={'pointer'} p={4} border="1px solid" borderColor={useColorModeValue('gray.100', 'gray.800')} bgColor={cardColor} boxShadow={'lg'} rounded={24}>
+    <Box  className='group box-with-animated-border'  transform={place === 'first' && 'translateY(-30px)'} cursor={'pointer'} p={4}  bgColor={cardColor} boxShadow={'lg'} rounded={24}>
         <Box w={{md: '280px', '2xl': '380px'}}
         h={{md: '400px', '2xl': '500px'}} 
         rounded={24}  

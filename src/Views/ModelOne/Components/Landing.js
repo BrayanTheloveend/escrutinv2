@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Grid, GridItem, Heading, HStack, Icon, IconButton, Image, Span, Text } from '@chakra-ui/react'
+import { Box, Button, Flex, Grid, GridItem, Heading, HStack, Icon, IconButton, Image, Link, Span, Text } from '@chakra-ui/react'
 import React from 'react'
 import {  LuFingerprint, LuGift, LuMousePointer2, LuPlay } from 'react-icons/lu'
 import { useColorModeValue } from '../../../Components/ui/color-mode'
@@ -85,9 +85,13 @@ const Landing = () => {
               <Box>
                 <Box display={'flex'} position={'relative'} justifyContent={'center'} alignItems={'center'} w={{md: '320px', '2xl': '520px'}} h={{md: '500px', '2xl': '800px'}} bgColor={'blue.300'} rounded={24}>
                   
-                  <IconButton size={'xl'} rounded={'full'}>
+                  {/* Lecteur vidéo intégré */}
+                  <Box rounded={24} as="iframe" w={{md: '320px', '2xl': '520px'}} h={{md: '500px', '2xl': '800px'}} src="https://www.youtube.com/embed/vaeio3idHzU?si=aEqKo0sIGLZqfR4_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                  </Box>
+
+                  {/* <IconButton position={'absolute'} top={'46%'} left={'47%'} size={'xl'} rounded={'full'}>
                     <LuPlay/>
-                  </IconButton>
+                  </IconButton> */}
 
 
 
