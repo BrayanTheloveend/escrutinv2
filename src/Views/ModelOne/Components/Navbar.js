@@ -40,10 +40,10 @@ const Navbar = () => {
     }, []);
 
   return (
-    <Box px={10} border={showNavbarBorder && "1px solid"} borderColor={useColorModeValue('gray.100', 'gray.800')} w={'100vw'} bgColor={cardColor}>
+    <Box px={{md: 10, base: 4}} border={showNavbarBorder && "1px solid"} borderColor={useColorModeValue('gray.100', 'gray.800')} w={'100vw'} bgColor={cardColor}>
         {/* desktop */}
 
-        <Flex  minH={'70px'} align={'center'}>
+        <Flex minH={'70px'} align={'center'}>
 
             {/* logo */}
             <Box>
@@ -53,7 +53,7 @@ const Navbar = () => {
             </Box>
 
             {/* navItems */}
-            <Flex gap={7} flex={1} justify={'center'}>
+            <Flex display={{md: 'flex', base: 'none'}} gap={7} flex={1} justify={'center'}>
                 {navItems.map((elt, index)=>{
                     return <NavItems key={index} data={elt} />
                 })}
