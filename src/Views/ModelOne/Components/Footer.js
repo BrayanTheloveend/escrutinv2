@@ -31,7 +31,7 @@ export default function Footer() {
     bgGradient={'to-r'} gradientFrom={useColorModeValue('blue.200', 'blue.600')}  gradientTo={useColorModeValue('orange.200', 'orange.800')}
     fontWeight={useColorModeValue(500, 600)}
     >
-      <Container as={Stack} maxW={'6xl'} py={10}>
+      <Container as={Stack} maxW={'full'} py={10}>
         <SimpleGrid
           templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr 1fr 1fr' }}
           spacing={8}>

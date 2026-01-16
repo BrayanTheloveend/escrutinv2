@@ -9,8 +9,8 @@ const CandidateItems = ({data}) => {
 
   return (
     <Box className='group' overflow={'hidden'} cursor={'pointer'} p={4} border="1px solid" borderColor={useColorModeValue('gray.100', 'gray.800')} bgColor={cardColor} boxShadow={'lg'} rounded={24}>
-        <Box maxW={'300px'}
-        h={"400px"} 
+        <Box maxW={{md: '300px', '2xl': '400px'}}
+        h={{md: '400px', '2xl': '500px'}}
         rounded={24}  
         bgImage={`url(${data?.image})`}
         bgPos={'center'}
@@ -23,20 +23,20 @@ const CandidateItems = ({data}) => {
             bottom={0}
             left={0}
             w={'full'} 
-            h={'30%'} 
+             h={{md: '30%', '2xl': '26%'}} 
             bgColor={cardColor}
             transition={'all ease-in-out 0.2s'}
             _groupHover={{
                 //  bg: useColorModeValue("rgba(53, 53, 53, 0.25)", "rgba(49, 49, 49, 0.45)"),  //Couleur de fond blanche avec transparence (entre 0.1 et 0.3 fonctionne bien)
                 //  backdropFilter: "blur(10px)", 
                 //  roundedBottom: 20,
-                h: '14%',
-                pt: 2
+               h: {md: '14%', '2xl': '12%'},
+                pt: {md: 2, '2xl': 1}
                 //pt: 0
                 //color: 'white'
             }}
             px={2} 
-            pt={4}
+            pt={{md: 4, '2xl': 3}}
         >
             <Flex _groupHover={{
                 transform: 'translate(23px, -12px)' // 20 50
@@ -53,8 +53,8 @@ const CandidateItems = ({data}) => {
             </Flex>
 
             <Box _groupHover={{ display: 'none'}}>
-                <Text fontFamily={'Poppins'} fontSize={'lg'} fontWeight={600} letterSpacing={-0.5}>{data?.nom}</Text>
-                <Text fontFamily={'Inter'} fontSize={'sm'} >{data?.profession}</Text>
+                <Text fontFamily={'Poppins'} fontSize={{md: 'lg', '2xl': 'xl'}} fontWeight={600} letterSpacing={-0.5}>{data?.nom}</Text>
+                <Text fontFamily={'Inter'} fontSize={{md: 'sm', '2xl': 'md'}} >{data?.profession}</Text>
             </Box>
 
             <Flex
@@ -64,23 +64,23 @@ const CandidateItems = ({data}) => {
                 <HStack transition={'all ease-in-out 0.2s'}>
                     <IconButton transition={'all ease-in-out 0.2s'} _groupHover={{
                         w: 'full'
-                    }} size={'sm'} colorPalette={'pink'} variant={'surface'} rounded={'full'}>
+                    }} size={{md: 'sm', '2xl': 'md'}} colorPalette={'pink'} variant={'surface'} rounded={'full'}>
                         <Span display={'none'} transition={'all ease-in-out 0.1s'} _groupHover={{
                         display: 'block'
                     }}>Voter</Span>
                         <LuHeart/>
                     </IconButton>
-                    <IconButton size={'sm'} variant={'surface'} rounded={'full'}>
+                    <IconButton size={{md: 'sm', '2xl': 'md'}} variant={'surface'} rounded={'full'}>
                         <LuShare2/>
                     </IconButton>
                 </HStack>
 
                 <VStack 
                  gap={0} mr={2}>
-                    <Text fontSize={'sm'} fontWeight={500}>
+                    <Text fontSize={{md: 'sm', '2xl': 'md'}} fontWeight={500}>
                         {data?.totalVotes}
                     </Text>
-                    <Text fontSize={'xs'}>votes</Text>
+                    <Text fontSize={{md: 'xs', '2xl': 'sm'}}>votes</Text>
                 </VStack>
 
             </Flex>

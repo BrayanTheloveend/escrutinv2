@@ -66,7 +66,7 @@ const OtherCandidates = () => {
 
         <Box mt={10}>
 
-            <Carousel.Root slideCount={otherCandidatesData.length} slidesPerPage={6.5} maxW="full" mx="auto">
+            <Carousel.Root slideCount={otherCandidatesData.length} slidesPerPage={6.5}  maxW="full" mx="auto">
                 <Carousel.ItemGroup>
                     {Array(15).fill('').map((_, index) => (
                     <Carousel.Item pl={1} key={index} py={4} index={index}>
@@ -112,7 +112,7 @@ const OtherCandidates = () => {
         </SimpleGrid>
 
         <Flex mt={14} w={'full'} justify={'center'} align={'center'}>
-            <Button rounded={'full'} variant={'surface'}>
+            <Button size={{md: 'md', '2xl': 'xl'}} rounded={'full'} variant={'surface'}>
                 Charger plus de candidates
             </Button>
         </Flex>
