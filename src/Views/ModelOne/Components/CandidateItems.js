@@ -23,7 +23,7 @@ const CandidateItems = ({data}) => {
             bottom={0}
             left={0}
             w={'full'} 
-             h={{md: '30%', '2xl': '26%'}} 
+            h={{md: '30%', '2xl': '26%'}} 
             bgColor={cardColor}
             transition={'all ease-in-out 0.2s'}
             _groupHover={{
@@ -40,7 +40,6 @@ const CandidateItems = ({data}) => {
         >
             <Flex _groupHover={{
                 transform: 'translate(23px, -12px)' // 20 50
-
             }} 
             transition={'all ease-in-out 0.2s'}
             p={1} rounded={'full'} position={'absolute'} bgGradient={'to-tr'} gradientFrom={useColorModeValue('blue.500', 'blue.500')}  gradientTo={useColorModeValue('orange.500', 'orange.600')} color={useColorModeValue('gray.800', 'white')} top={-10} right={8}>
@@ -53,7 +52,8 @@ const CandidateItems = ({data}) => {
             </Flex>
 
             <Box _groupHover={{ display: 'none'}}>
-                <Text fontFamily={'Poppins'} fontSize={{md: 'lg', '2xl': 'xl'}} fontWeight={600} letterSpacing={-0.5}>{data?.nom}</Text>
+                {/* <Text fontFamily={'Poppins'} fontSize={{md: 'lg', '2xl': 'xl'}} fontWeight={600} letterSpacing={-0.5}>{data?.nom}</Text> */}
+                <Text fontFamily={'Momo Trust Display'} fontSize={{md: 'lg', '2xl': 'xl'}}>{data?.nom}</Text>
                 <Text fontFamily={'Inter'} fontSize={{md: 'sm', '2xl': 'md'}} >{data?.profession}</Text>
             </Box>
 
