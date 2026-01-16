@@ -28,7 +28,7 @@ export default function Footer() {
     boxShadow={'lg'}
     borderTop="1px solid"
     borderColor={useColorModeValue('gray.100', 'gray.800')}
-    bgGradient={'to-l'} gradientFrom={useColorModeValue('blue.200', 'blue.500')}  gradientTo={useColorModeValue('orange.200', 'orange.600')}
+    bgGradient={{md: 'to-l', base: 'to-tr'}} gradientFrom={useColorModeValue('blue.200', 'blue.500')}  gradientTo={useColorModeValue('orange.200', 'orange.600')}
     fontWeight={useColorModeValue(500, 600)}
     >
       <Container as={Stack} maxW={'full'} py={10}>

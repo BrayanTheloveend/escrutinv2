@@ -12,17 +12,17 @@ const FAQ = () => {
 
     ]
   return (
-    <Box px={'20%'} mt={28}>
-        <Heading mb={14} letterSpacing={-0.5} fontFamily={'Poppins'} textAlign={'center'} fontSize={'4xl'}>
+    <Box px={{md: '20%', base: 4}} mt={{md: 28, base: 16}}>
+        <Heading mb={14} letterSpacing={-0.5} fontFamily={'Poppins'} textAlign={'center'} fontSize={{md: '4xl', '2xl': '5xl', base: '2xl'}}>
             Foires Aux Questions
         </Heading>
 
 
         <Accordion.Root collapsible>
             {items.map((item, index) => (
-                <Accordion.Item py={2} key={index} value={item.value}>
+                <Accordion.Item py={{md: 2, base: 1}} key={index} value={item.value}>
                 <Accordion.ItemTrigger>
-                    <Heading fontFamily={'Onest'} fontSize={'lg'} flex="1">{item.title}</Heading>
+                    <Heading fontFamily={'Onest'} fontSize={{md: 'lg', base: 'md'}} flex="1">{item.title}</Heading>
                     <Accordion.ItemIndicator />
                 </Accordion.ItemTrigger>
                 <Accordion.ItemContent>

@@ -43,13 +43,13 @@ const OtherCandidates = () => {
     const vectorColorSecondary = '#1ea1f8'
 
   return (
-    <Box px={{md: 24, '2xl': "19%"}} w={'full'} py={20} flexDir={'column'}  justify={'center'} align={'center'} gap={28} position={'relative'} overflow={'hidden'}>
+    <Box px={{md: 20, '2xl': "19%", base: 4}} w={'full'} py={20} flexDir={'column'}  justify={'center'} align={'center'} gap={{md: 28, base: 10}} position={'relative'} overflow={'hidden'}>
         <Flex w={'full'} justify={'space-between'} align={'center'}>
             <Box>
-                <Heading fontSize={{md: '4xl', '2xl': '5xl'}} fontFamily={'Poppins'}>
+                <Heading fontSize={{md: '4xl', '2xl': '5xl', base: '2xl'}} fontFamily={'Poppins'}>
                     Laissez-vous <Span color={'orange.500'}>séduire</Span>
                 </Heading>
-                <Text fontFamily={'Onest'} mt={4}>
+                <Text fontFamily={'Onest'} fontSize={{md: 'md', '2xl': 'xl', base: 'md'}} mt={{md: 4, base: 1}}>
                     Les autres candidates nominées
                 </Text>
             </Box>
@@ -69,7 +69,7 @@ const OtherCandidates = () => {
 
         <Box mt={10}>
 
-            <Carousel.Root slideCount={otherCandidatesData.length} slidesPerPage={6.5}  maxW="full" mx="auto">
+            <Carousel.Root slideCount={otherCandidatesData.length} slidesPerPage={{ base: 4, md: 6.5}}   maxW="full" mx="auto">
                 <Carousel.ItemGroup>
                     {Array(15).fill('').map((_, index) => (
                     <Carousel.Item pl={1} key={index} py={4} index={index}>
@@ -108,14 +108,14 @@ const OtherCandidates = () => {
 
 
 
-        <SimpleGrid columns={4} mt={8} gap={2}>
+        <SimpleGrid columns={{md: 4, base: 1}} mt={8} gap={2}>
             {
                 otherCandidatesData.map((elt, index)=> <CandidateItems key={index} data={elt} />)
             }
         </SimpleGrid>
 
         <Flex mt={14} w={'full'} justify={'center'} align={'center'}>
-            <Button size={{md: 'md', '2xl': 'xl'}} rounded={'full'} variant={'surface'}>
+            <Button size={{md: 'md', '2xl': 'xl', base: 'md'}} rounded={'full'} variant={'surface'}>
                 Charger plus de candidates
             </Button>
         </Flex>
