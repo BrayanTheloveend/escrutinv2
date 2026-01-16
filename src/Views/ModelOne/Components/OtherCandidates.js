@@ -39,12 +39,15 @@ const OtherCandidates = () => {
 
     const borderColorOnHover =  useColorModeValue('orange.400', 'orange.800')
 
+    const vectorColorPrimary = "#fda311"
+    const vectorColorSecondary = '#1ea1f8'
+
   return (
     <Box px={{md: 24, '2xl': "19%"}} w={'full'} py={20} flexDir={'column'}  justify={'center'} align={'center'} gap={28} position={'relative'} overflow={'hidden'}>
         <Flex w={'full'} justify={'space-between'} align={'center'}>
             <Box>
                 <Heading fontSize={'4xl'} fontFamily={'Poppins'}>
-                    Vous aimeriez <Span color={'orange.500'}>peut être</Span>
+                    Laissez-vous <Span color={'orange.500'}>séduire</Span>
                 </Heading>
                 <Text fontFamily={'Onest'} mt={4}>
                     Les autres candidates nominées
@@ -116,6 +119,30 @@ const OtherCandidates = () => {
                 Charger plus de candidates
             </Button>
         </Flex>
+
+
+
+
+        {/* SVG TOP RIGHT */}
+
+      
+
+
+        <Box position={'absolute'} zIndex={-1} top={'250px'} rotate={'-180deg'} right={'-250px'}>
+            <svg width="379" height="399" viewBox="0 0 379 399" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path opacity="0.7" d="M192.331 48.8207L35.355 205.797L192.331 362.773L349.307 205.797L192.331 48.8207Z" stroke={vectorColorSecondary} stroke-width="50" stroke-miterlimit="10"/>
+                <path opacity="0.7" d="M136.167 242.127C119.957 225.917 119.957 199.647 136.167 183.437L307.447 12.1575C323.657 -4.0525 349.927 -4.0525 366.137 12.1575C382.347 28.3675 382.347 54.6375 366.137 70.8475L194.857 242.127C178.647 258.327 152.377 258.327 136.167 242.127Z" fill="url(#paint0_linear_0_1)"/>
+                <defs>
+                <linearGradient id="paint0_linear_0_1" x1="136.166" y1="242.123" x2="366.138" y2="12.1511" gradientUnits="userSpaceOnUse">
+                <stop stop-color={vectorColorSecondary}/>
+                <stop offset="1"  stop-color={vectorColorPrimary}/>
+                </linearGradient>
+                </defs>
+            </svg>
+
+
+        </Box>
+
 
     </Box>
   )

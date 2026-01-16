@@ -53,7 +53,8 @@ const TopCandidateItems = ({data, place}) => {
             </Flex>
 
             <Box _groupHover={{ display: 'none'}}>
-                <Text fontFamily={'Poppins'} fontSize={{md: 'lg', '2xl': 'xl'}} fontWeight={600} letterSpacing={-0.5}>{data?.nom}</Text>
+                {/* <Text fontFamily={'Poppins'} fontSize={{md: 'lg', '2xl': 'xl'}} fontWeight={600} letterSpacing={-0.5}>{data?.nom}</Text> */}
+                <Text fontFamily={'Momo Trust Display'} fontSize={{md: 'lg', '2xl': 'xl'}}>{data?.nom}</Text>
                 <Text fontFamily={'Inter'} fontSize={{md: 'sm', '2xl': 'md'}} >{data?.profession}</Text>
             </Box>
 
