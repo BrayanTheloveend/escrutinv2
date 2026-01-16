@@ -1,3 +1,13 @@
+
+:root  {
+  --color-primary:  #3b82f6;
+  --color-secondary:  ##f97316;
+
+}
+
+
+
+
 * {
   margin: 0;
 
@@ -34,3 +44,4 @@ code {
     var(--_g) 0 calc(var(--_d) + var(--y));
   mask-repeat: no-repeat;
 }
+

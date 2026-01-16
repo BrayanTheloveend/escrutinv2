@@ -46,7 +46,7 @@ const OtherCandidates = () => {
     <Box px={{md: 24, '2xl': "19%"}} w={'full'} py={20} flexDir={'column'}  justify={'center'} align={'center'} gap={28} position={'relative'} overflow={'hidden'}>
         <Flex w={'full'} justify={'space-between'} align={'center'}>
             <Box>
-                <Heading fontSize={'4xl'} fontFamily={'Poppins'}>
+                <Heading fontSize={{md: '4xl', '2xl': '5xl'}} fontFamily={'Poppins'}>
                     Laissez-vous <Span color={'orange.500'}>séduire</Span>
                 </Heading>
                 <Text fontFamily={'Onest'} mt={4}>
@@ -128,8 +128,8 @@ const OtherCandidates = () => {
       
 
 
-        <Box position={'absolute'} zIndex={-1} top={'250px'} rotate={'-180deg'} right={'-250px'}>
-            <svg width="379" height="399" viewBox="0 0 379 399" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <Box position={'absolute'} w={{md: '400px', '2xl': '400px'}} h={{md: '400px', '2xl': '400px'}} zIndex={-1} top={'250px'} rotate={'-180deg'} right={'-250px'}>
+            <svg viewBox="0 0 379 399" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path opacity="0.7" d="M192.331 48.8207L35.355 205.797L192.331 362.773L349.307 205.797L192.331 48.8207Z" stroke={vectorColorSecondary} stroke-width="50" stroke-miterlimit="10"/>
                 <path opacity="0.7" d="M136.167 242.127C119.957 225.917 119.957 199.647 136.167 183.437L307.447 12.1575C323.657 -4.0525 349.927 -4.0525 366.137 12.1575C382.347 28.3675 382.347 54.6375 366.137 70.8475L194.857 242.127C178.647 258.327 152.377 258.327 136.167 242.127Z" fill="url(#paint0_linear_0_1)"/>
                 <defs>
