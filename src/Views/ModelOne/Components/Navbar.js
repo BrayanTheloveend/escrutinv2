@@ -1,5 +1,5 @@
 import { Box, Button, Flex, Heading, HStack } from '@chakra-ui/react'
-import React from 'react'
+import React, { useState } from 'react'
 import NavItems from './NavItems'
 import { useColorModeValue } from '../../../Components/ui/color-mode'
 
@@ -24,9 +24,23 @@ const Navbar = () => {
         },
     ]
     const cardColor = useColorModeValue('white', 'gray.900')
+    const [showNavbarBorder, setShowNavbarBorder] = useState(false);
+
+    React.useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 500) {
+                setShowNavbarBorder(true);
+            } else {
+                setShowNavbarBorder(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
   return (
-    <Box px={10} w={'100vw'} bgColor={cardColor}>
+    <Box px={10} border={showNavbarBorder && "1px solid"} borderColor={useColorModeValue('gray.100', 'gray.800')} w={'100vw'} bgColor={cardColor}>
         {/* desktop */}
 
         <Flex  minH={'70px'} align={'center'}>

@@ -1,42 +1,47 @@
-import { Box, Carousel, IconButton, Image } from '@chakra-ui/react'
+import { Box, Carousel, Heading, Image, Text } from '@chakra-ui/react'
 import React from 'react'
-import { LuChevronLeft, LuChevronRight } from 'react-icons/lu'
+import { useColorModeValue } from '../../../Components/ui/color-mode'
 
 const Partners = () => {
 
-    const items = Array.from({ length: 5 })
+  const items = Array.from({ length: 5 })
+  const cardColor = useColorModeValue('white', 'gray.900')
+  
   return (
-    <Box>
-        <Carousel.Root autoplay slidesPerPage={4} slideCount={items.length} maxW="full" mx="auto">
-            <Carousel.ItemGroup>
-                {items.map((_, index) => (
-                <Carousel.Item key={index} index={index}>
-                    <Box w="100%">
-                        <Image 
-                            w={'100px'}
-                            src={require('../../../assets/Main/logo.png')}
-                        />
-                    </Box>
-                </Carousel.Item>
-                ))}
-            </Carousel.ItemGroup>
-            <Carousel.Control justifyContent="center" gap="4">
-        <Carousel.PrevTrigger asChild>
-          <IconButton size="xs" variant="ghost">
-            <LuChevronLeft />
-          </IconButton>
-        </Carousel.PrevTrigger>
+    <Box py={8} px={14} bgGradient={'to-r'} gradientFrom={useColorModeValue('blue.400', 'blue.500')}  gradientTo={useColorModeValue('orange.500', 'orange.800')} rounded={28} >
+      
+      <Carousel.Root autoplay slidesPerPage={6} slideCount={items.length} maxW="full" mx="auto">
+        <Carousel.ItemGroup>
+          {Array(15).fill('').map((_, index) => (
+          <Carousel.Item key={index} index={index}>
+            <Box 
+              cursor={'pointer'}
+              transition={'all ease-in-out 0.2s'}
+              // _hover={{
+              //     border: '2px solid',
+              //     borderColor: borderColorOnHover,
+              //     transform: 'rotate(-10deg)'
+              // }}
+              boxSize={28}
+              rounded={'full'}
+              // bg="rgba(255, 255, 255, 0.15)" // Couleur de fond blanche avec transparence (entre 0.1 et 0.3 fonctionne bien)
+              // backdropFilter="blur(10px)"    // L'effet de flou sur l'arrière-plan de cet élément
+              p={5}      
+              bgColor={'white'}                    // Espacement intérieur
+              boxShadow={'sm'}
+              border="2px solid rgba(255, 255, 255, 0.3)" // Une bordure semi-transparente pour simuler le bord du verre                 // Couleur du texte
+            >
+              <Image
+              src={require('../../../assets/Main/logo.png')}
 
-        <Carousel.Indicators />
-
-        <Carousel.NextTrigger asChild>
-          <IconButton size="xs" variant="ghost">
-            <LuChevronRight />
-          </IconButton>
-        </Carousel.NextTrigger>
-      </Carousel.Control>
-
-        </Carousel.Root>
+              />
+            </Box>
+                
+             
+          </Carousel.Item>
+          ))}
+        </Carousel.ItemGroup>
+      </Carousel.Root>
     </Box>
   )
 }
