@@ -1,12 +1,12 @@
 import { Box, Button, Flex, Grid, GridItem, Heading, HStack, Icon, IconButton, Image, Span, Text } from '@chakra-ui/react'
 import React from 'react'
-import { LuArrowUpRight, LuFingerprint, LuGift, LuMousePointer2, LuPlay } from 'react-icons/lu'
+import {  LuFingerprint, LuGift, LuMousePointer2, LuPlay } from 'react-icons/lu'
 import { useColorModeValue } from '../../../Components/ui/color-mode'
-import { Link } from 'react-router-dom'
+
 
 const Landing = () => {
 
-    const cardColor = useColorModeValue('white', 'gray.900')
+  //const cardColor = useColorModeValue('white', 'gray.900')
     
   return (
         <Box borderBottom={'1px solid'} borderColor={useColorModeValue('gray.100', 'gray.800')} w={'full'} px={10} py={6} rounded={40} h={'full'} bgGradient={'to-tr'} gradientFrom={useColorModeValue('blue.400', 'blue.500')}  gradientTo={useColorModeValue('orange.500', 'orange.800')}>
@@ -25,7 +25,7 @@ const Landing = () => {
                     Qui es le meilleur Artiste ?
                   </Heading>
                   <Text fontSize={{md: 'sm', '2xl': 'md'}}>
-                    Vient et votre pour ton favoris
+                    Vient et vote pour ton favoris
                   </Text>
                 </Box>
               </HStack>
