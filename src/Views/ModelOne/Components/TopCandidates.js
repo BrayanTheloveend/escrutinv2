@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Span, Text } from '@chakra-ui/react'
+import { Box, Flex, Grid, Heading, Span, Text } from '@chakra-ui/react'
 import React from 'react'
 import TopCandidateItems from './TopCandidateItems'
 import { motion } from 'framer-motion'
@@ -33,7 +33,7 @@ const TopCandidates = () => {
     
     
   return (
-    <Flex w={'full'} py={10} flexDir={'column'}  justify={'center'} align={'center'} gap={28} position={'relative'} overflow={'hidden'}>
+    <Flex w={'full'} px={10} py={10} flexDir={'column'}  justify={'center'} align={'center'} gap={28} position={'relative'} overflow={'hidden'}>
 
         {/* svg top left */}
         {/* <Box position={'absolute'} opacity={0.6} top={0} left={0}>
@@ -119,11 +119,11 @@ const TopCandidates = () => {
             transition={{ duration: 5, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut' }}
         />
 
-        <Box textAlign={'center'}>
-            <Heading fontSize={{md: '4xl', '2xl': '5xl'}} fontFamily={'Poppins'}>
+        <Box textAlign={'center'} mt={{md: 'inherit', base: 4}}>
+            <Heading fontSize={{md: '4xl', '2xl': '5xl', base: '2xl'}} fontFamily={'Poppins'}>
                 Le Top <Span fontFamily={'Outfit'}>#3</Span> <Span color={'blue.500'}>actuelle</Span>
             </Heading>
-            <Text fontFamily={'Onest'} fontSize={{md: 'md', '2xl': 'xl'}} mt={{md: 4, '2xl': 6}}>
+            <Text fontFamily={'Onest'} fontSize={{md: 'md', '2xl': 'xl', base: 'md'}} mt={{md: 4, '2xl': 6, base: 3}}>
                 Découvrez les meilleurs condidates du moment
             </Text>
 
@@ -131,10 +131,10 @@ const TopCandidates = () => {
 
 
 
-        <Flex w={'full'} gap={8} justify={'center'} align={'center'}>
+        <Grid w={'full'} gridTemplateColumns={{"2xl":  'repeat(3, 380px)', md: 'repeat(3, 280px)', base: '1fr'}} gap={{md: 16, base: 8}} placeItems={'center'} justifyContent={'center'}>
 
             {topCandidatesData.map((elt,index)=> <TopCandidateItems place={index === 1 && 'first'} key={index} data={elt}/>)}
-        </Flex>
+        </Grid>
        
     </Flex>
   )

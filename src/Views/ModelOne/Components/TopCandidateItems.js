@@ -8,9 +8,12 @@ const TopCandidateItems = ({data, place}) => {
     const cardColor = useColorModeValue('white', 'gray.900')
 
   return (
-    <Box  className='group box-with-animated-border'  transform={place === 'first' && 'translateY(-30px)'} cursor={'pointer'} p={4}  bgColor={cardColor} boxShadow={'lg'} rounded={24}>
-        <Box w={{md: '280px', '2xl': '380px'}}
-        h={{md: '400px', '2xl': '500px'}} 
+    <Box className='group' transform={{md: place === 'first' && 'translateY(-30px)'}} cursor={'pointer'} p={4}  bgColor={cardColor} overflow={'hidden'} boxShadow={'lg'} rounded={24}>
+        <Box 
+        maxW={{md: '300px', '2xl': '400px', base: 'full'}}
+        w={{md: '280px', '2xl': '380px', base: 'full'}}
+        minW={'280px'}
+        h={{md: '400px', '2xl': '500px', base: '400px'}} 
         rounded={24}  
         bgImage={`url(${data?.image})`}
         bgPos={'center'}
@@ -31,12 +34,12 @@ const TopCandidateItems = ({data, place}) => {
                 //  backdropFilter: "blur(10px)", 
                 //  roundedBottom: 20,
                 h: {md: '14%', '2xl': '12%'},
-                pt: {md: 2, '2xl': 1}
+                pt: {md: 2, '2xl': 1, base: 0}
                 //pt: 0
                 //color: 'white'
             }}
             px={2} 
-            pt={{md: 4, '2xl': 3}}
+            pt={{md: 4, '2xl': 3, base: 2}}
         >
             <Flex _groupHover={{
                 transform: 'translate(20px, 50px)' // 20 50
@@ -69,23 +72,23 @@ const TopCandidateItems = ({data, place}) => {
                 <HStack transition={'all ease-in-out 0.2s'}>
                     <IconButton transition={'all ease-in-out 0.2s'} _groupHover={{
                         w: 'full'
-                    }} size={{md: 'sm', '2xl': 'md'}} colorPalette={'pink'} variant={'surface'} rounded={'full'}>
+                    }} size={{md: 'sm', '2xl': 'md', base: 'sm'}} colorPalette={'pink'} variant={'surface'} rounded={'full'}>
                         <Span display={'none'} transition={'all ease-in-out 0.1s'} _groupHover={{
                         display: 'block'
                     }}>Voter</Span>
                         <LuHeart/>
                     </IconButton>
-                    <IconButton size={{md: 'sm', '2xl': 'md'}} variant={'surface'} rounded={'full'}>
+                    <IconButton size={{md: 'sm', '2xl': 'md', base: 'md'}} variant={'surface'} rounded={'full'}>
                         <LuShare2/>
                     </IconButton>
                 </HStack>
 
                 <VStack 
                  gap={0} mr={2}>
-                    <Text fontSize={{md: 'sm', '2xl': 'md'}} fontWeight={500}>
+                    <Text fontSize={{md: 'sm', '2xl': 'md', base: 'sm'}} fontWeight={500}>
                         {data?.totalVotes}
                     </Text>
-                    <Text fontSize={{md: 'xs', '2xl': 'sm'}}>votes</Text>
+                    <Text fontSize={{md: 'xs', '2xl': 'sm', base: 'xs'}}>votes</Text>
                 </VStack>
 
             </Flex>

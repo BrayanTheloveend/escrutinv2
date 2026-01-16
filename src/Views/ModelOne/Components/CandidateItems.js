@@ -9,8 +9,10 @@ const CandidateItems = ({data}) => {
 
   return (
     <Box className='group' overflow={'hidden'} cursor={'pointer'} p={4} border="1px solid" borderColor={useColorModeValue('gray.100', 'gray.800')} bgColor={cardColor} boxShadow={'lg'} rounded={24}>
-        <Box maxW={{md: '300px', '2xl': '400px'}}
-        h={{md: '400px', '2xl': '500px'}}
+        <Box 
+        w={{md: '260px', '2xl': '380px', base: 'full'}}
+        maxW={{md: '300px', '2xl': '400px', base: 'full'}}
+        h={{md: '400px', '2xl': '500px', base: '400px'}}
         rounded={24}  
         bgImage={`url(${data?.image})`}
         bgPos={'center'}
@@ -31,12 +33,12 @@ const CandidateItems = ({data}) => {
                 //  backdropFilter: "blur(10px)", 
                 //  roundedBottom: 20,
                h: {md: '14%', '2xl': '12%'},
-                pt: {md: 2, '2xl': 1}
+                pt: {md: 2, '2xl': 1, base: 0}
                 //pt: 0
                 //color: 'white'
             }}
             px={2} 
-            pt={{md: 4, '2xl': 3}}
+            pt={{md: 4, '2xl': 3, base: 3}}
         >
             <Flex _groupHover={{
                 transform: 'translate(23px, -12px)' // 20 50
@@ -64,13 +66,13 @@ const CandidateItems = ({data}) => {
                 <HStack transition={'all ease-in-out 0.2s'}>
                     <IconButton transition={'all ease-in-out 0.2s'} _groupHover={{
                         w: 'full'
-                    }} size={{md: 'sm', '2xl': 'md'}} colorPalette={'pink'} variant={'surface'} rounded={'full'}>
+                    }} size={{md: 'sm', '2xl': 'md', base: 'md'}} colorPalette={'pink'} variant={'surface'} rounded={'full'}>
                         <Span display={'none'} transition={'all ease-in-out 0.1s'} _groupHover={{
                         display: 'block'
                     }}>Voter</Span>
                         <LuHeart/>
                     </IconButton>
-                    <IconButton size={{md: 'sm', '2xl': 'md'}} variant={'surface'} rounded={'full'}>
+                    <IconButton size={{md: 'sm', '2xl': 'md', base: 'md'}} variant={'surface'} rounded={'full'}>
                         <LuShare2/>
                     </IconButton>
                 </HStack>

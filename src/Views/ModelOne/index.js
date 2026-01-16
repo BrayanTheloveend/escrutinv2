@@ -16,6 +16,8 @@ const ModelOne = () => {
 
   const { colorMode, toggleColorMode } = useColorMode()
   const cardColor = useColorModeValue('white', 'gray.900')
+  let isIOSDevice = !window.MSStream && /iPad|iPhone|iPod/.test(navigator.userAgent); // fails on iPad iOS 13
+
   //const textGhost = useColorModeValue('gray.600', 'gray.500')
   // const dashboardBg= useColorModeValue('#ffffffff', 'gray.950')
   
@@ -29,7 +31,7 @@ const ModelOne = () => {
       </Box>
 
       {/* Landing Page */}
-      <Box mt={10} boxShadow={'sm'} h={'100vh'} p={4} pt={8} bgColor={cardColor} roundedBottom={40}>
+      <Box mt={{md: 14, base: isIOSDevice ? 10 : 7}} boxShadow={'sm'} h={'100vh'} p={{md: 4, base: 1}} pt={8} bgColor={cardColor} roundedBottom={40}>
         <Landing/>
       </Box>
 
@@ -91,8 +93,8 @@ const ModelOne = () => {
 
       <OtherCandidates/>
 
-      <Box px={{md: 10, '2xl': '15%'}} mt={10}>
-        <Heading mb={14} letterSpacing={-0.5} fontFamily={'Poppins'} textAlign={'center'} fontSize={'4xl'}>
+      <Box px={{md: 10, '2xl': '15%', base: 4}} mt={{md: 10, base: 2}}>
+        <Heading mb={14} fontSize={{md: '4xl', '2xl': '5xl', base: '2xl'}} letterSpacing={-0.5} fontFamily={'Poppins'} textAlign={'center'}>
           Nos Partenaires
         </Heading>
         <Partners/>
