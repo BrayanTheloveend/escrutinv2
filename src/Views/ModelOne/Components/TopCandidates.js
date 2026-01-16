@@ -52,10 +52,10 @@ const TopCandidates = () => {
         </Box>
 
         <Box textAlign={'center'}>
-            <Heading fontSize={'4xl'} fontFamily={'Poppins'}>
+            <Heading fontSize={{md: '4xl', '2xl': '5xl'}} fontFamily={'Poppins'}>
                 Le Top <Span fontFamily={'Outfit'}>#3</Span> <Span color={'blue.500'}>actuelle</Span>
             </Heading>
-            <Text fontFamily={'Onest'} mt={4}>
+            <Text fontFamily={'Onest'} fontSize={{md: 'md', '2xl': 'xl'}} mt={{md: 4, '2xl': 6}}>
                 Découvrez les meilleurs condidates du moment
             </Text>
 
