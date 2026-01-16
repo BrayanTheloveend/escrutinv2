@@ -10,7 +10,7 @@ const CandidateItems = ({data}) => {
   return (
     <Box className='group' overflow={'hidden'} cursor={'pointer'} p={4} border="1px solid" borderColor={useColorModeValue('gray.100', 'gray.800')} bgColor={cardColor} boxShadow={'lg'} rounded={24}>
         <Box 
-        w={{md: '260px', '2xl': '380px', base: 'full'}}
+        w={{md: '260px', '2xl': '360px', base: 'full'}}
         maxW={{md: '300px', '2xl': '400px', base: 'full'}}
         h={{md: '400px', '2xl': '500px', base: '400px'}}
         rounded={24}  
