@@ -55,7 +55,7 @@ const TopCandidates = () => {
 
         {/* SVG TOP RIGHT */}
 
-        <Box  position={'absolute'} w={{md: '129px', '2xl': '329px'}} h={{md: '102px', '2xl': '202px'}} opacity={0.6} top={20} right={0}>
+        {/* <Box  position={'absolute'} w={{md: '129px', '2xl': '329px'}} h={{md: '102px', '2xl': '202px'}} opacity={0.6} top={20} right={0}>
             <svg  viewBox="0 0 129 102" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M125.38 50.25C125.94 48.91 126.42 47.54 126.82 46.15L82.0399 1.37C80.6499 1.76 79.2799 2.24 77.9399 2.81L125.38 50.25Z" fill="#DA5077"/>
                 <path d="M122.31 56.05C123.06 54.91 123.73 53.73 124.33 52.53L75.6499 3.85001C74.4499 4.45001 73.2699 5.12 72.1299 5.87L122.31 56.05Z" fill="#DA5077"/>
@@ -75,7 +75,7 @@ const TopCandidates = () => {
                 <path d="M0 87.58L10.76 98.34V76.82L0 87.58Z" fill="#244579"/>
             </svg>
 
-        </Box>
+        </Box> */}
 
         {/* CIRCLE VECTOR */}
 
