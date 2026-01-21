@@ -1,4 +1,4 @@
-import { Accordion, Box, Breadcrumb, Button, DataList, Flex, GridItem, Heading, IconButton, Input, Link, SimpleGrid, Skeleton, Table, Tabs, Text } from '@chakra-ui/react'
+import { Accordion, Box, Breadcrumb, Button, DataList, Flex, GridItem, Heading, IconButton, Input, Link, SimpleGrid, Skeleton, Table, Tabs, Text, VStack } from '@chakra-ui/react'
 import React from 'react'
 import { useColorModeValue } from '../../../Components/ui/color-mode'
 import Navbar from '../Components/Navbar'
@@ -32,9 +32,9 @@ const DetailsPage = ({data}) => {
             </Box> */}
             <Flex border={'1px solid'}   align={'center'} fontFamily={'xl'} borderColor={useColorModeValue('blackAlpha.200', 'gray.700')} position={'relative'} w={'full'}>
               <Input border={'none'}
-                pl={{md: 24, base: 10}}
+                pl={{md: 24, base: 4}}
                 fontFamily={'Inter'} 
-                placeholder='Recherchez un Article, un produit...' 
+                placeholder='Recherchez une candidate' 
                 _focusVisible={{
                 outlineColor: 'none',
               }}/>
@@ -71,13 +71,30 @@ const DetailsPage = ({data}) => {
                 </Box>
 
                 {/* Image */}
+
+                <Box w={'full'} h={'full'} maxH={'400px'}
+                bgImage={`url()`}
+                >
+
+                </Box>
                 
               </GridItem>
 
-              <GridItem top={{md: '5.4em', base: 'inherit'}} position={{md: 'sticky', base: 'inherit'}} width='full' border={'1px solid'} borderColor={'blackAlpha.200'} rounded={14} p={6} mt={{md: 0, base: 4}} h={{md: 'max-content', base: 'full'}} >
+              <GridItem top={{md: '5.4em', base: 'inherit'}} position={{md: 'sticky', base: 'inherit'}} width='full' border={'1px solid'} borderColor={'blackAlpha.200'} rounded={14}  mt={{md: 0, base: 4}} h={{md: 'max-content', base: 'full'}} >
                 <Flex gap={2} align={'center'} justify={'space-between'} mb={2}>
-                  <Text fontSize={'xs'} rounded={4} bgColor={useColorModeValue('blue.50', 'blue.800')} w={'max-content'} p={1} color={useColorModeValue('blue.500', 'blue.400')}>Rang Actuel</Text>
-                  <Text fontSize={{md: 'xl', '2xl': '3xl'}} fontFamily={'Outfit'}>#1</Text>
+                  <Text fontWeight={500} fontSize={'xs'} rounded={4}  w={'max-content'} p={1} bgGradient={'to-tr'} gradientFrom={useColorModeValue('blue.400', 'blue.500')}  gradientTo={useColorModeValue('orange.500', 'orange.800')}>
+                    RANG <strong>#1</strong>
+                  </Text>
+
+                  <VStack 
+                    gap={0} mr={2}>
+                    <Text fontSize={{md: 'sm', '2xl': 'md'}} fontFamily={'Outfit'} fontWeight={600}>
+                      1520
+                    </Text>
+                    <Text fontSize={{md: 'xs', '2xl': 'sm', base: 'sm'}}>votes</Text>
+                  </VStack>
+
+                 
                 </Flex>
                 
                 <Text fontSize={'sm'} mt={2}> </Text>
@@ -140,7 +157,7 @@ const DetailsPage = ({data}) => {
                   <Text mt={2} fontSize={'sm'}>votez maintenant et obtenez un bonus de votes supplementaires.</Text>
                 </Box>
                 <Flex flexDir={{md: 'row', base: 'column'}} mt={8} gap={4}>
-                  <Button flex={1} colorPalette={'pink'} rounded={'full'} variant={'surface'}>
+                  <Button flex={{md: 1, base: 'inherit'}} colorPalette={'pink'} rounded={'full'} variant={'surface'}>
                     <LuHeart/> Voter maintant
                   </Button>
                   <Button rounded={'full'} variant={'surface'}>
