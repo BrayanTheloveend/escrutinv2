@@ -2,7 +2,7 @@ import { Accordion, Box, Breadcrumb, Button, DataList, Flex, GridItem, Heading, 
 import React from 'react'
 import { useColorModeValue } from '../../../Components/ui/color-mode'
 import Navbar from '../Components/Navbar'
-import { LuSearch } from 'react-icons/lu'
+import { LuHeart, LuSearch } from 'react-icons/lu'
 const DetailsPage = ({data}) => {
 
     const textGhost = useColorModeValue('gray.600', 'gray.400')
@@ -16,7 +16,7 @@ const DetailsPage = ({data}) => {
   return (
     <Box>
 
-      <Box position={'relative'} pb={8}>
+      <Box  position={'relative'} pb={8}>
       <Navbar />
       <Box pos={'sticky'} bgColor={useColorModeValue('white', 'gray.800')}
         w={'full'}
@@ -45,7 +45,7 @@ const DetailsPage = ({data}) => {
           </Flex>   
       </Box>
       
-      <Box w={'full'} px={{md: '100px', base: 4}}  py={4} mb={10}>
+      <Box w={'full'} px={{md: 20, '2xl': "21%", base: 4}} mt={{md: 'inherit', '2xl': 10, base: 1}}  py={4} mb={10}>
         <SimpleGrid gridTemplateColumns={{md: '2fr 1fr', base: '1fr'}} w={'full'} gap={{md: 6, base: 4}} position={'relative'}>
               <GridItem w={'full'}>
                 {/* indicator  */}
@@ -77,7 +77,7 @@ const DetailsPage = ({data}) => {
               <GridItem top={{md: '5.4em', base: 'inherit'}} position={{md: 'sticky', base: 'inherit'}} width='full' border={'1px solid'} borderColor={'blackAlpha.200'} rounded={14} p={6} mt={{md: 0, base: 4}} h={{md: 'max-content', base: 'full'}} >
                 <Flex gap={2} align={'center'} justify={'space-between'} mb={2}>
                   <Text fontSize={'xs'} rounded={4} bgColor={useColorModeValue('blue.50', 'blue.800')} w={'max-content'} p={1} color={useColorModeValue('blue.500', 'blue.400')}>Rang Actuel</Text>
-                  <Text fontSize={'xl'} fontFamily={'Outfit'}>#1</Text>
+                  <Text fontSize={{md: 'xl', '2xl': '3xl'}} fontFamily={'Outfit'}>#1</Text>
                 </Flex>
                 
                 <Text fontSize={'sm'} mt={2}> </Text>
@@ -93,9 +93,9 @@ const DetailsPage = ({data}) => {
                   </Text>
 
                   <Box w={'full'}>
-                    <DataList.Root mt={1}  orientation="horizontal"  w={'full'}>
+                    <DataList.Root mt={3}  orientation="horizontal"  w={'full'}>
                       {items.map((item) => (
-                        <DataList.Item key={item.label} pt="3">
+                        <DataList.Item key={item.label} pt="1">
                           <DataList.ItemLabel fontFamily={'Onest'}>{item.label}</DataList.ItemLabel>
                           <DataList.ItemValue fontFamily={'Inter'}>{item.value}</DataList.ItemValue>
                         </DataList.Item>
@@ -141,7 +141,7 @@ const DetailsPage = ({data}) => {
                 </Box>
                 <Flex flexDir={{md: 'row', base: 'column'}} mt={8} gap={4}>
                   <Button flex={1} colorPalette={'pink'} rounded={'full'} variant={'surface'}>
-                    Commander
+                    <LuHeart/> Voter maintant
                   </Button>
                   <Button rounded={'full'} variant={'surface'}>
                     partager
