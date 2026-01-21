@@ -93,7 +93,7 @@ const DetailsPage = ({data}) => {
                   </Text>
 
                   <Box w={'full'}>
-                    <DataList.Root mt={1}  orientation="horizontal"  w={'full'}>
+                    <DataList.Root mt={1}  orientation="horizontal" divideY="1px" w={'full'}>
                       {items.map((item) => (
                         <DataList.Item key={item.label} pt="3">
                           <DataList.ItemLabel fontFamily={'Onest'}>{item.label}</DataList.ItemLabel>
