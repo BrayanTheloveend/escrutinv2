@@ -103,7 +103,7 @@ const DetailsPage = (props) => {
 
                 {/* Image */}
 
-                <Box display={'flex'} alignItems={'center'} position={'relative'} justifyContent={'center'} mt={4} w={'full'}  h={{'2xl': '500px', md: '400px', base: '310px'}}
+                <Box display={'flex'} overflow={'hidden'} alignItems={'center'} position={'relative'} justifyContent={'center'} mt={4} w={'full'}  h={{'2xl': '500px', md: '400px', base: '310px'}}
                   bgGradient={'to-tl'}
                   gradientFrom={'orange.500'}
                   gradientTo={'blue.500'}
@@ -128,16 +128,16 @@ const DetailsPage = (props) => {
                   <Image
                   objectFit={{md: 'inherit', base: 'contain'}}
                     src={require('../../../assets/Main/candidate.jpeg')}
-                    w={{md: '400px', base: 'full'}}
-                    h={{md: '500px', base: 'full'}}
+                    w={{'2xl': '400px', md: '350px', base: 'full'}}
+                    h={{'2xl': '500px', md: '400px', base: 'full'}}
                     zIndex={2}
                   />
 
-                  <Heading left={4} rotate={'10deg'} opacity={0.5} zIndex={1} fontSize={'9xl'} position={'absolute'} fontFamily={'Momo Trust Display'} fontWeight={ isIOSDevice && 'medium'}>
+                  <Heading left={4} rotate={'10deg'} opacity={0.5} zIndex={1} fontSize={{'2xl': '9xl', md: '8xl'}} position={'absolute'} fontFamily={'Momo Trust Display'} fontWeight={ isIOSDevice && 'medium'}>
                     Djilo 
                   </Heading>
 
-                  <Heading right={4} rotate={'10deg'} opacity={0.5} zIndex={1} fontSize={'9xl'} position={'absolute'} fontFamily={'Momo Trust Display'} fontWeight={ isIOSDevice && 'medium'}>
+                  <Heading right={4} rotate={'10deg'} opacity={0.5} zIndex={1} fontSize={{'2xl': '9xl', md: '8xl'}} position={'absolute'} fontFamily={'Momo Trust Display'} fontWeight={ isIOSDevice && 'medium'}>
                     Jorja 
                   </Heading>
 
@@ -240,10 +240,10 @@ const DetailsPage = (props) => {
                   <Text mt={2} fontSize={'sm'}>votez maintenant et obtenez un bonus de votes supplementaires.</Text> */}
                 </Box>
                 <Flex flexDir={{md: 'row', base: 'column'}} mt={8} gap={4}>
-                  <Button colorPalette={'blue'} variant={'surface'} size={{'2xl': 'xl', md: 'lg', base: 'md'}} flex={{md: 1, base: 'inherit'}} rounded={'full'}>
+                  <Button  variant={'surface'} size={{'2xl': 'xl', md: 'lg', base: 'md'}} flex={{md: 1, base: 'inherit'}} rounded={'full'}>
                     <LuHeart/> Voter maintant
                   </Button>
-                  <IconButton colorPalette={'orange'} size={{'2xl': 'xl', md: 'lg', base: 'md'}}  variant={'surface'} rounded={'full'}>
+                  <IconButton  size={{'2xl': 'xl', md: 'lg', base: 'md'}}  variant={'surface'} rounded={'full'}>
                     <LuShare2/>
                   </IconButton>
                 </Flex>

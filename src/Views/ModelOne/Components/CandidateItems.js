@@ -8,11 +8,10 @@ const CandidateItems = ({data, resized}) => {
     const cardColor = useColorModeValue('white', 'gray.900')
 
   return (
-    <Box className='group' w={ resized ? {md: 'full', '2xl': '320px', base: 'full'} : {md: '260px', '2xl': '360px', base: 'full'}}
+    <Box className='group' w={ resized ? {md: 'full', '2xl': '320px', base: 'full'} : {md: '285px', '2xl': '360px', base: 'full'}}
         maxW={{md: '300px', '2xl': '400px', base: 'full'}}
-        h={{md: '400px', '2xl': '500px', base: '400px'}} overflow={'hidden'} cursor={'pointer'} p={4} border="1px solid" borderColor={useColorModeValue('gray.100', 'gray.800')} bgColor={cardColor} boxShadow={'lg'} rounded={24}>
-        <Box 
-        
+        h={{md: '400px', '2xl': '500px', base: '400px'}} overflow={'hidden'} cursor={'pointer'} p={resized ? {'2xl': 4, md: 2} : 4} border="1px solid" borderColor={useColorModeValue('gray.100', 'gray.800')} bgColor={cardColor} boxShadow={'lg'} rounded={24}>
+        <Box    
         rounded={24} 
         h={'full'}
         w={'full'}
@@ -35,7 +34,7 @@ const CandidateItems = ({data, resized}) => {
                 //  backdropFilter: "blur(10px)", 
                 //  roundedBottom: 20,
                h: {md: '14%', '2xl': '12%'},
-                pt: {md: 2, '2xl': 1, base: 0}
+                pt: {md: resized ? 0: 2, '2xl': 1, base: 0}
                 //pt: 0
                 //color: 'white'
             }}
