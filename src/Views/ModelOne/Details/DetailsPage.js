@@ -6,8 +6,11 @@ import { LuHeart, LuSearch, LuShare2 } from 'react-icons/lu'
 import { GiImperialCrown, GiLaurelCrown, GiStarsStack } from 'react-icons/gi'
 import { motion } from 'framer-motion'
 import CompareCandidates from './CompareCandidates'
+import OtherCandidates from './OtherCandidates'
 
 const DetailsPage = (props) => {
+
+  let isIOSDevice = !window.MSStream && /iPad|iPhone|iPod/.test(navigator.userAgent); // fails on iPad iOS 13
   const MotionBox = motion(Box)
     const textGhost = useColorModeValue('gray.600', 'gray.400')
 
@@ -100,10 +103,10 @@ const DetailsPage = (props) => {
 
                 {/* Image */}
 
-                <Box display={'flex'} justifyContent={'center'} mt={4} w={'full'}  h={{'2xl': '500px', md: '400px', base: '310px'}}
+                <Box display={'flex'} alignItems={'center'} position={'relative'} justifyContent={'center'} mt={4} w={'full'}  h={{'2xl': '500px', md: '400px', base: '310px'}}
                   bgGradient={'to-tl'}
                   gradientFrom={'orange.500'}
-                  gradientTo={'gray.500'}
+                  gradientTo={'blue.500'}
                   animate={{
                     boxShadow: [
                       `0 0 20px ${themeColors.primary}40`,
@@ -127,7 +130,16 @@ const DetailsPage = (props) => {
                     src={require('../../../assets/Main/candidate.jpeg')}
                     w={{md: '400px', base: 'full'}}
                     h={{md: '500px', base: 'full'}}
+                    zIndex={2}
                   />
+
+                  <Heading left={4} rotate={'10deg'} opacity={0.5} zIndex={1} fontSize={'9xl'} position={'absolute'} fontFamily={'Momo Trust Display'} fontWeight={ isIOSDevice && 'medium'}>
+                    Djilo 
+                  </Heading>
+
+                  <Heading right={4} rotate={'10deg'} opacity={0.5} zIndex={1} fontSize={'9xl'} position={'absolute'} fontFamily={'Momo Trust Display'} fontWeight={ isIOSDevice && 'medium'}>
+                    Jorja 
+                  </Heading>
 
                 </Box>
                 
@@ -244,7 +256,18 @@ const DetailsPage = (props) => {
 
                 {/* OTHERS ARTICLE */}
 
-                {/* <OtherDetails dataParent={{categoryId: idCategory, isSuccess: isSuccess, id: fetchData?._id, categoryName: name}}/> */}
+
+
+                  <Box mt={20}>
+                    <Heading fontSize={{md: '3xl', '2xl': '4xl', base: '2xl'}} fontFamily={'Poppins'}>
+                      Vous pourriez <Span color={'orange.500'}>aime</Span>
+                    </Heading>
+                    <Text fontFamily={'Onest'} fontSize={{md: 'md', '2xl': 'xl', base: 'md'}} mt={{md: 4, base: 1}}>
+                      Dans la meme categorie
+                    </Text>
+                  </Box>
+
+                  <OtherCandidates/>
               </GridItem>
         </SimpleGrid>
 
