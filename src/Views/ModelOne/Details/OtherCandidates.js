@@ -37,7 +37,7 @@ const OtherCandidates = () => {
     ]
 
   return (
-    <SimpleGrid columns={{'2xl' : 3, md: 3, base: 1}} mt={20} gap={3}>
+    <SimpleGrid columns={{'2xl' : 3, md: 3, base: 1}} gap={3}>
         {
             otherCandidatesData.map((elt, index)=> <CandidateItems resized={true} key={index} data={elt} />)
         }

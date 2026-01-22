@@ -1,4 +1,4 @@
-import { Accordion, Box, Heading, Span } from '@chakra-ui/react'
+import { Accordion, Box, Heading } from '@chakra-ui/react'
 import React from 'react'
 
 const FAQ = () => {

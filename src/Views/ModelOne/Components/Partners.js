@@ -1,11 +1,11 @@
-import { Box, Carousel, Heading, Image, Text } from '@chakra-ui/react'
+import { Box, Carousel, Image } from '@chakra-ui/react'
 import React from 'react'
 import { useColorModeValue } from '../../../Components/ui/color-mode'
 
 const Partners = () => {
 
   const items = Array.from({ length: 5 })
-  const cardColor = useColorModeValue('white', 'gray.900')
+  //const cardColor = useColorModeValue('white', 'gray.900')
   
   return (
     <Box py={8} px={{md: 14, base: 4}} bgGradient={'to-r'} gradientFrom={useColorModeValue('blue.400', 'blue.500')}  gradientTo={useColorModeValue('orange.500', 'orange.800')} rounded={28} >
