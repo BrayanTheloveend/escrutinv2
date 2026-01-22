@@ -3,17 +3,19 @@ import React from 'react'
 import { useColorModeValue } from '../../../Components/ui/color-mode'
 import { LuHeart, LuShare2 } from 'react-icons/lu'
 
-const CandidateItems = ({data}) => {
+const CandidateItems = ({data, resized}) => {
 
     const cardColor = useColorModeValue('white', 'gray.900')
 
   return (
-    <Box className='group' overflow={'hidden'} cursor={'pointer'} p={4} border="1px solid" borderColor={useColorModeValue('gray.100', 'gray.800')} bgColor={cardColor} boxShadow={'lg'} rounded={24}>
-        <Box 
-        w={{md: '260px', '2xl': '360px', base: 'full'}}
+    <Box className='group' w={ resized ? {md: 'full', '2xl': '320px', base: 'full'} : {md: '260px', '2xl': '360px', base: 'full'}}
         maxW={{md: '300px', '2xl': '400px', base: 'full'}}
-        h={{md: '400px', '2xl': '500px', base: '400px'}}
-        rounded={24}  
+        h={{md: '400px', '2xl': '500px', base: '400px'}} overflow={'hidden'} cursor={'pointer'} p={4} border="1px solid" borderColor={useColorModeValue('gray.100', 'gray.800')} bgColor={cardColor} boxShadow={'lg'} rounded={24}>
+        <Box 
+        
+        rounded={24} 
+        h={'full'}
+        w={'full'}
         bgImage={`url(${data?.image})`}
         bgPos={'center'}
         bgSize={'cover'}
