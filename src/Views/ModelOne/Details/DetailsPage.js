@@ -42,7 +42,7 @@ const DetailsPage = (props) => {
   return (
     <Box>
 
-      <Box  position={'relative'} pb={8} pt={14}>
+      <Box  position={'relative'} pb={8} pt={20}>
       <Box pos={'fixed'} zIndex={1000} top={0}>
         <Navbar/>
       </Box>
@@ -100,7 +100,7 @@ const DetailsPage = (props) => {
 
                 {/* Image */}
 
-                <Box display={'flex'} justifyContent={'center'} mt={4} w={'full'}  h={{'2xl': '500px', md: '400px', base: '310px'}}
+                <Box display={'flex'} justifyContent={'center'} mt={4} w={'full'}  h={{'2xl': '500px', md: '500px', base: '310px'}}
                   bgGradient={'to-tl'}
                   gradientFrom={'orange.500'}
                   gradientTo={'gray.500'}
