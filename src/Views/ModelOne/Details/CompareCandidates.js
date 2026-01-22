@@ -27,15 +27,15 @@ const CompareCandidates = () => {
         rounded={14}
           objectFit={{md: 'inherit', base: 'contain'}}
             src={require('../../../assets/Main/candidate.jpeg')}
-            w={{md: '50%', base: 'full'}}
-            
+            w={{'2xl': '50%', md: '55%', base: 'full'}}
+            h={{'md': 'full', '2xl': 'inherit'}}
           />
 
           <Box p={2} h={'full'} position={'relative'}>
             <Text fontFamily={'Outfit'} fontSize={'sm'}>
               Avant vous
             </Text>
-            <Heading mt={2} lineHeight={1.1} lineClamp={2} fontSize={'xl'} fontFamily={'Momo Trust Display'} fontWeight={ isIOSDevice && 'medium'}>
+            <Heading mt={2} lineHeight={1.1} lineClamp={2} fontSize={{'2xl': 'xl', md: 'md', base: 'md'}} fontFamily={'Momo Trust Display'} fontWeight={{md: isIOSDevice ? 'medium' : 500}}>
               Stella Brunilla
             </Heading>
 
@@ -43,7 +43,7 @@ const CompareCandidates = () => {
               <Span fontFamily={'Outfit'}>152</Span> votes
             </Text>
 
-            <Button rounded={'full'} mt={2} position={'absolute'} bottom={2}>
+            <Button rounded={'full'} mt={2} position={'absolute'} bottom={2} size={{md: 'xs', "2xl": 'md', base: 'md'}}>
               votez ici !
             </Button>
           </Box>
@@ -82,8 +82,8 @@ const CompareCandidates = () => {
             <Flex 
             transition={'all ease-in-out 0.2s'}
             p={1} rounded={'full'} position={'absolute'} bgGradient={'to-tr'} gradientFrom={useColorModeValue('blue.500', 'blue.500')}  gradientTo={useColorModeValue('orange.500', 'orange.600')} color={useColorModeValue('gray.800', 'white')} top={-10} right={8}>
-              <Flex w={14} h={14} transition={'all ease-in-out 0.2s'} bgColor={cardColor}  rounded={'full'} align={'center'} justify={'center'}>
-                <Heading fontFamily={'Outfit'} transition={'all ease-in-out 0.2s'} _groupHover={{ fontSize: 'md'}} fontWeight={useColorModeValue(600, 500)}>{`02`}</Heading> 
+              <Flex w={{"2xl" : 14, md: 10}} h={{"2xl" : 14, md: 10}} transition={'all ease-in-out 0.2s'} bgColor={cardColor}  rounded={'full'} align={'center'} justify={'center'}>
+                <Heading fontFamily={'Outfit'} fontSize={{"2xl": "xl", md: 'md'}} transition={'all ease-in-out 0.2s'} _groupHover={{ fontSize: 'md'}} fontWeight={useColorModeValue(600, 500)}>{`02`}</Heading> 
               </Flex>
             </Flex>
 
@@ -107,7 +107,7 @@ const CompareCandidates = () => {
           <Text fontFamily={'Outfit'} fontSize={'sm'}>
             Apres vous
           </Text>
-          <Heading mt={2} lineHeight={1.1} lineClamp={2} fontSize={'xl'} fontFamily={'Momo Trust Display'} fontWeight={ isIOSDevice && 'medium'}>
+          <Heading mt={2} lineHeight={1.1} lineClamp={2} fontSize={{'2xl': 'xl', md: 'md', base: 'md'}} fontFamily={'Momo Trust Display'} fontWeight={{md: isIOSDevice ? 'medium' : 500}}>
             Marine Carreras
           </Heading>
 
@@ -115,7 +115,7 @@ const CompareCandidates = () => {
             <Span fontFamily={'Outfit'}>152</Span> votes
           </Text>
 
-          <Button rounded={'full'} mt={2} position={'absolute'} bottom={2}>
+          <Button rounded={'full'} mt={2} position={'absolute'} bottom={2} size={{md: 'xs', "2xl": 'md', base: 'md'}}>
             votez ici !
           </Button>
         </Box>
@@ -123,7 +123,8 @@ const CompareCandidates = () => {
         rounded={14}
           objectFit={{md: 'inherit', base: 'contain'}}
             src={require('../../../assets/Main/candidate.jpeg')}
-            w={{md: '50%', base: 'full'}}
+            w={{'2xl': '50%', md: '55%', base: 'full'}}
+            h={{'md': 'full', '2xl': 'inherit'}}
             
           />
       </GridItem>
