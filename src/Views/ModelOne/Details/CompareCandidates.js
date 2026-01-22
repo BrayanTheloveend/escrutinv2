@@ -1,7 +1,7 @@
 import { Box, Button, Flex, GridItem, Heading, Image, SimpleGrid, Span, Text } from '@chakra-ui/react'
 import React from 'react'
 import { useColorModeValue } from '../../../Components/ui/color-mode'
-
+import { LuWheat } from 'react-icons/lu'
 const CompareCandidates = () => {
 
 
@@ -9,7 +9,7 @@ const CompareCandidates = () => {
   let isIOSDevice = !window.MSStream && /iPad|iPhone|iPod/.test(navigator.userAgent); // fails on iPad iOS 13
 
   return (
-    <SimpleGrid mt={6} h={'200px'} gap={4} columns={3}>
+    <SimpleGrid mt={6} h={{md: '200px', base: 'inherit'}} gap={4} columns={{md: 3, base: 1}}>
 
       {/* LEFT */}
 
@@ -21,13 +21,13 @@ const CompareCandidates = () => {
       display={'flex'}
       gap={2}
       alignItems={'center'}
-      justifyContent={'space-between'}
+      justifyContent={{md: 'space-between', base: 'inherit'}}
       >
         <Image
         rounded={14}
           objectFit={{md: 'inherit', base: 'contain'}}
             src={require('../../../assets/Main/candidate.jpeg')}
-            w={{'2xl': '50%', md: '55%', base: 'full'}}
+            w={{'2xl': '50%', md: '55%', base: '150px'}}
             h={{'md': 'full', '2xl': 'inherit'}}
           />
 
@@ -43,8 +43,8 @@ const CompareCandidates = () => {
               <Span fontFamily={'Outfit'}>152</Span> votes
             </Text>
 
-            <Button rounded={'full'} mt={2} position={'absolute'} bottom={2} size={{md: 'xs', "2xl": 'md', base: 'md'}}>
-              votez ici !
+            <Button colorPalette={'orange'} variant={'surface'} rounded={'full'} mt={2} position={'absolute'} bottom={2} size={{md: 'xs', "2xl": 'md', base: 'md'}}>
+              votez <LuWheat/>
             </Button>
           </Box>
       </GridItem>
@@ -54,7 +54,7 @@ const CompareCandidates = () => {
       <GridItem 
       
       position={'relative'}
-      display={'flex'}
+      display={{md: 'flex', base: 'none'}}
       gap={2}
       alignItems={'center'}
       justifyContent={'center'}
@@ -115,15 +115,15 @@ const CompareCandidates = () => {
             <Span fontFamily={'Outfit'}>152</Span> votes
           </Text>
 
-          <Button rounded={'full'} mt={2} position={'absolute'} bottom={2} size={{md: 'xs', "2xl": 'md', base: 'md'}}>
-            votez ici !
+          <Button colorPalette={'blue'} variant={'surface'} rounded={'full'} mt={2} position={'absolute'} bottom={2} size={{md: 'xs', "2xl": 'md', base: 'md'}}>
+            votez <LuWheat/>
           </Button>
         </Box>
         <Image
         rounded={14}
           objectFit={{md: 'inherit', base: 'contain'}}
             src={require('../../../assets/Main/candidate.jpeg')}
-            w={{'2xl': '50%', md: '55%', base: 'full'}}
+            w={{'2xl': '50%', md: '55%', base: '150px'}}
             h={{'md': 'full', '2xl': 'inherit'}}
             
           />

@@ -2,7 +2,7 @@ import { Box, Breadcrumb, Button, DataList, Flex, GridItem, Heading, HStack, Ico
 import React, { useEffect, useState } from 'react'
 import { useColorModeValue } from '../../../Components/ui/color-mode'
 import Navbar from '../Components/Navbar'
-import { LuHeart, LuShare2 } from 'react-icons/lu'
+import {LuShare2, LuWheat } from 'react-icons/lu'
 import { GiImperialCrown, GiLaurelCrown, GiStarsStack } from 'react-icons/gi'
 import CompareCandidates from './CompareCandidates'
 import OtherCandidates from './OtherCandidates'
@@ -40,7 +40,7 @@ const DetailsPage = (props) => {
       default:
       setPalette({color: 'gray.800#orange.500', shadow: '0 0 20px rgba(95, 95, 91, 0.7)'})
       }
-    }, [])
+    }, [props.place])
   return (
     <Box>
 
@@ -132,11 +132,11 @@ const DetailsPage = (props) => {
                     zIndex={2}
                   />
 
-                  <Heading left={4} rotate={'10deg'} opacity={0.5} zIndex={1} fontSize={{'2xl': '9xl', md: '8xl'}} position={'absolute'} fontFamily={'Momo Trust Display'} fontWeight={ isIOSDevice && 'medium'}>
+                  <Heading left={4} rotate={'10deg'} opacity={0.5} zIndex={1} fontSize={{'2xl': '9xl', md: '8xl', base: '6xl'}} position={'absolute'} fontFamily={'Momo Trust Display'} fontWeight={ isIOSDevice && 'medium'}>
                     Djilo 
                   </Heading>
 
-                  <Heading right={4} rotate={'10deg'} opacity={0.5} zIndex={1} fontSize={{'2xl': '9xl', md: '8xl'}} position={'absolute'} fontFamily={'Momo Trust Display'} fontWeight={ isIOSDevice && 'medium'}>
+                  <Heading right={4} rotate={'10deg'} opacity={0.5} zIndex={1} fontSize={{'2xl': '9xl', md: '8xl', base: '6xl'}} position={'absolute'} fontFamily={'Momo Trust Display'} fontWeight={ isIOSDevice && 'medium'}>
                     Jorja 
                   </Heading>
 
@@ -239,8 +239,8 @@ const DetailsPage = (props) => {
                   <Text mt={2} fontSize={'sm'}>votez maintenant et obtenez un bonus de votes supplementaires.</Text> */}
                 </Box>
                 <Flex flexDir={{md: 'row', base: 'column'}} mt={8} gap={4}>
-                  <Button  variant={'surface'} size={{'2xl': 'xl', md: 'lg', base: 'md'}} flex={{md: 1, base: 'inherit'}} rounded={'full'}>
-                    <LuHeart/> Voter maintant
+                  <Button size={{'2xl': 'xl', md: 'lg', base: 'md'}} flex={{md: 1, base: 'inherit'}} rounded={'full'}>
+                    <LuWheat/> Voter maintant
                   </Button>
                   <IconButton  size={{'2xl': 'xl', md: 'lg', base: 'md'}}  variant={'surface'} rounded={'full'}>
                     <LuShare2/>
@@ -251,22 +251,24 @@ const DetailsPage = (props) => {
 
               <GridItem mt={{md: 0, base: 6}}>
                   
+                  
                 <CompareCandidates/>
 
                 {/* OTHERS ARTICLE */}
 
 
 
-                  <Box mt={20}>
-                    <Heading fontSize={{md: '3xl', '2xl': '4xl', base: '2xl'}} fontFamily={'Poppins'}>
-                      Vous pourriez <Span color={'orange.500'}>aime</Span>
-                    </Heading>
-                    <Text fontFamily={'Onest'} fontSize={{md: 'md', '2xl': 'xl', base: 'md'}} mt={{md: 4, base: 1}}>
-                      Dans la meme categorie
-                    </Text>
-                  </Box>
-
+                <Box mt={{md: 20, base: 14}}>
+                  <Heading fontSize={{md: '3xl', '2xl': '4xl', base: '2xl'}} fontFamily={'Poppins'}>
+                    Vous pourriez <Span color={'orange.500'}>aime</Span>
+                  </Heading>
+                  <Text fontFamily={'Onest'} fontSize={{md: 'md', '2xl': 'xl', base: 'md'}} mt={{md: 4, base: 1}}>
+                    Dans la meme categorie
+                  </Text>
+                </Box>
+                <Box mt={{md: 20, base: 10}}>
                   <OtherCandidates/>
+                </Box>
               </GridItem>
         </SimpleGrid>
 

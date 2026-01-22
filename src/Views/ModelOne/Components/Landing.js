@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Grid, GridItem, Heading, HStack, Icon, IconButton, Image, Link, Span, Text, VStack } from '@chakra-ui/react'
+import { Box, Button, Flex, Grid, GridItem, Heading, HStack, Icon, IconButton, Image, Span, Text } from '@chakra-ui/react'
 import React from 'react'
 import {  LuFingerprint, LuGift, LuMousePointer2, LuPlay } from 'react-icons/lu'
 import { useColorModeValue } from '../../../Components/ui/color-mode'
