@@ -1,17 +1,16 @@
-import { Accordion, Box, Breadcrumb, Button, DataList, Flex, GridItem, Heading, HStack, Icon, IconButton, Image, Input, Link, SimpleGrid, Skeleton, Span, Table, Tabs, Text, VStack } from '@chakra-ui/react'
+import { Box, Breadcrumb, Button, DataList, Flex, GridItem, Heading, HStack, Icon, IconButton, Image, Link, SimpleGrid, Skeleton, Span, Text, VStack } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { useColorModeValue } from '../../../Components/ui/color-mode'
 import Navbar from '../Components/Navbar'
-import { LuHeart, LuSearch, LuShare2 } from 'react-icons/lu'
+import { LuHeart, LuShare2 } from 'react-icons/lu'
 import { GiImperialCrown, GiLaurelCrown, GiStarsStack } from 'react-icons/gi'
-import { motion } from 'framer-motion'
 import CompareCandidates from './CompareCandidates'
 import OtherCandidates from './OtherCandidates'
 
 const DetailsPage = (props) => {
 
   let isIOSDevice = !window.MSStream && /iPad|iPhone|iPod/.test(navigator.userAgent); // fails on iPad iOS 13
-  const MotionBox = motion(Box)
+
     const textGhost = useColorModeValue('gray.600', 'gray.400')
 
     const themeColors = {
