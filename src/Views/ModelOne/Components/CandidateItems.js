@@ -10,7 +10,7 @@ const CandidateItems = ({data, resized}) => {
   return (
     <Box className='group' w={ resized ? {md: 'full', '2xl': '320px', base: 'full'} : {md: '285px', '2xl': '360px', base: 'full'}}
         maxW={{md: '300px', '2xl': '400px', base: 'full'}}
-        h={{md: '400px', '2xl': '500px', base: '400px'}} overflow={'hidden'} cursor={'pointer'} p={resized ? {'2xl': 4, md: 2} : 4} border="1px solid" borderColor={useColorModeValue('gray.100', 'gray.800')} bgColor={cardColor} boxShadow={'lg'} rounded={24}>
+        h={{md: '400px', '2xl': '500px', base: '400px'}} overflow={'hidden'} cursor={'pointer'} p={resized ? {'2xl': 4, md: 2, base: 2} : 4} border="1px solid" borderColor={useColorModeValue('gray.100', 'gray.800')} bgColor={cardColor} boxShadow={'lg'} rounded={24}>
         <Box    
         rounded={24} 
         h={'full'}
