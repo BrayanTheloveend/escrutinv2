@@ -6,6 +6,7 @@ import {LuShare2, LuWheat } from 'react-icons/lu'
 import { GiImperialCrown, GiLaurelCrown, GiStarsStack } from 'react-icons/gi'
 import CompareCandidates from './CompareCandidates'
 import OtherCandidates from './OtherCandidates'
+import PaymentsDialog from '../PaymentsViews/PaymentsDialog'
 
 const DetailsPage = (props) => {
 
@@ -239,9 +240,11 @@ const DetailsPage = (props) => {
                   <Text mt={2} fontSize={'sm'}>votez maintenant et obtenez un bonus de votes supplementaires.</Text> */}
                 </Box>
                 <Flex flexDir={{md: 'row', base: 'column'}} mt={8} gap={4}>
-                  <Button size={{'2xl': 'xl', md: 'lg', base: 'md'}} flex={{md: 1, base: 'inherit'}} rounded={'full'}>
-                    <LuWheat/> Voter maintant
-                  </Button>
+                  <PaymentsDialog>
+                    <Button size={{'2xl': 'xl', md: 'lg', base: 'md'}} flex={{md: 1, base: 'inherit'}} rounded={'full'}>
+                      <LuWheat/> Voter maintant
+                    </Button>
+                  </PaymentsDialog>
                   <IconButton  size={{'2xl': 'xl', md: 'lg', base: 'md'}}  variant={'surface'} rounded={'full'}>
                     <LuShare2/>
                   </IconButton>
