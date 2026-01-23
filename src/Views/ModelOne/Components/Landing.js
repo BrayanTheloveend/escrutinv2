@@ -132,9 +132,9 @@ const Landing = () => {
                     position={'absolute'}
                     top={8}
                     right={-28}
+                    p={5}                          // Espacement intérieur
                     bg="rgba(255, 255, 255, 0.15)" // Couleur de fond blanche avec transparence (entre 0.1 et 0.3 fonctionne bien)
                     backdropFilter="blur(10px)"    // L'effet de flou sur l'arrière-plan de cet élément
-                    p={5}                          // Espacement intérieur
                     boxShadow="0 4px 30px rgba(0, 0, 0, 0.1)" // Une ombre subtile pour un effet 3D
                     border="1px solid rgba(255, 255, 255, 0.3)" // Une bordure semi-transparente pour simuler le bord du verre                 // Couleur du texte
                   >
