@@ -1,6 +1,6 @@
-import { Alert, Box, Button, ButtonGroup, CloseButton, createListCollection, Dialog, Field, GridItem, Image, Input, Portal, ScrollArea, Select, SimpleGrid, Span, Steps, Strong, Text, useSteps } from '@chakra-ui/react'
+import { Alert, Box, Button, ButtonGroup, CloseButton, Code, createListCollection, Dialog, Field, Flex, GridItem, Heading, Icon, Image, Input, Portal, Progress, ScrollArea, Select, SimpleGrid, Span, Steps, Strong, Text, useSteps } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
-import { LuCheck, LuCoins, LuFingerprint, LuLocate, LuPencil, LuWheat } from 'react-icons/lu'
+import { LuCheck, LuClockAlert, LuCoins, LuFingerprint, LuLocate, LuPencil, LuWheat } from 'react-icons/lu'
 import { useColorModeValue } from '../../../Components/ui/color-mode'
 
 const PaymentsDialog = (props) => {
@@ -67,7 +67,7 @@ const [step, setStep] = useState(0)
 
 
   return (
-    <Dialog.Root closeOnInteractOutside={false} placement={'center'} scrollBehavior="inside" size={{ '2xl': 'xl', md: 'lg', base: 'full'}}>
+    <Dialog.Root open={true} closeOnInteractOutside={false} placement={'center'} scrollBehavior="inside" size={{ '2xl': 'xl', md: 'lg', base: 'full'}}>
       <Dialog.Trigger asChild>
         {props.children}
       </Dialog.Trigger>
@@ -78,7 +78,10 @@ const [step, setStep] = useState(0)
             <Dialog.Header>
               <Dialog.Title  fontFamily={'Momo Trust Display'} fontSize={{'2xl': '2xl', md: 'xl', base: 'lg'}}>Votez une candidate</Dialog.Title>
             </Dialog.Header>
-            <Dialog.Body>
+
+            {/* BEFORE PAYMENT */}
+
+            <Dialog.Body display={'none'}>
              <Steps.Root gridTemplateColumns={'1fr'} mt={8}
                 orientation={'vertical'}
                 colorPalette={'blue'}
@@ -301,10 +304,84 @@ const [step, setStep] = useState(0)
                 />
 
             </Dialog.Body>
+
+
+
+            <Dialog.Body display={'none'}>
+                <Flex flexDir={'column'} mt={10} gap={8} justify={'center'} align={'center'} w={'full'} h={'full'}>
+                    {/* <Icon color={'orange.700'} boxSize={20} strokeWidth={'1px'}>
+                        <LuClockAlert/>
+                    </Icon> */}
+
+                    <Image
+                        src={require('../../../assets/Main/payment-1.png')}
+                        w={'200px'}
+                        animation='vibrate 0.4s linear infinite'
+                    />
+
+                    <Box textAlign={'center'} w={'500px'}>
+                        <Heading fontSize={'2xl'} fontFamily={'Outfit'}>
+                            Transaction en attente de validation
+                        </Heading>
+                        <Text mt={4}>
+                            Pour finaliser votre vote, une étape de sécurité supplémentaire est nécessaire. Veuillez tapez <Strong>le code USSD</Strong>
+                            &nbsp; <Code size="lg">*126#</Code> &nbsp;
+                            puis saisir le code secret associé à votre compte ou à votre carte bancaire dans la fenêtre de validation ci-dessous.
+                        </Text>
+                    </Box>
+
+                    <Box>
+                        <Progress.Root size={'sm'} striped rounded={'full'} w="240px" value={null} colorPalette={'blue'}>
+                            <Progress.Track rounded={'full'}>
+                                <Progress.Range rounded={'full'} />
+                            </Progress.Track>
+                        </Progress.Root>
+                        
+                    </Box>
+                </Flex>
+            </Dialog.Body>
+
+            <Dialog.Body>
+
+
+            
+                <Flex flexDir={'column'} mt={10} gap={8} justify={'center'} align={'center'} w={'full'} h={'full'}>
+                    {/* <Icon color={'orange.700'} boxSize={20} strokeWidth={'1px'}>
+                        <LuClockAlert/>
+                    </Icon> */}
+
+                    <Image
+                        src={require('../../../assets/Main/payment-1.png')}
+                        w={'200px'}
+                        animation='vibrate 0.4s linear infinite'
+                    />
+
+                    <Box textAlign={'center'} w={'500px'}>
+                        <Heading fontSize={'2xl'} fontFamily={'Outfit'}>
+                            Transaction effectue avec success
+                        </Heading>
+                        <Text mt={4}>
+                            Votre vote a ete bien pris en compte patienter pour voir l'animation 
+                        </Text>
+                    </Box>
+
+                    <Box>
+                        
+                        
+                    </Box>
+                </Flex>
+            </Dialog.Body>
+
+
+
+
+
             <Dialog.Footer flexDir={{md: 'row', base: 'column-reverse'}} w={'full'} justifyContent={'center'}>
                 <Button rounded={'full'} flex={{ md : 1, base: 'inherit'}} w={'full'} onClick={()=>step - 1 < 0 ? setStep(0) : setStep(step-1)} variant="outline">Precedant</Button>
                 <Button rounded={'full'} flex={{ md : 1, base: 'inherit'}} w={'full'} onClick={()=> step + 1 > 4 ? setStep(4) : setStep(step+1)}>Suivant</Button>
             </Dialog.Footer>
+
+
             <Dialog.CloseTrigger asChild>
               <CloseButton rounded={'full'} size="sm" />
             </Dialog.CloseTrigger>
